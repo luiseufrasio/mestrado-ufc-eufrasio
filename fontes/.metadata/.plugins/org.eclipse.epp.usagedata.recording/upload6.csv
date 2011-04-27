@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658654987
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658656802
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658658128
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658660534
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1303658663311
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658664595
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658666217
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658667985
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658673484
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658674877
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658677051
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658682437
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1303658683552
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658686325
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658688784
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658689734
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658690905
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658692590
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658693189
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658693352
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658693474
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658694968
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658696762
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658700340
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658717548

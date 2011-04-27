@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="file:/C:/Users/Luis/Documents/Mestrado/svn/fontes/Amazon/amazon.owl"
+>
+	
+	<owl:Ontology rdf:about="">
+		<owl:versionInfo>$Id: amazon.owl,v 1.0 2011/04/25 21:12:40 meh Exp $</owl:versionInfo>		<rdfs:comment>Amazon Ontology</rdfs:comment>
+	</owl:Ontology>
+	
+	<owl:Class rdf:ID="Product">
+		<rdfs:subClassOf>
+			<owl:Restriction>				<owl:onProperty rdf:resource="title" rdf:datatype="xsd:string"/>			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="Publ">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="name" rdf:datatype="xsd:string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="address" rdf:datatype="xsd:string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="Music">
+		<rdfs:subClassOf rdf:resource="#Product">
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="recorder" rdf:datatype="xsd:string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="Book">
+		<rdfs:subClassOf rdf:resource="#Product">
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="publ" rdf:datatype="#Publ"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+</rdf:RDF>

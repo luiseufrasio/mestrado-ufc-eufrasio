@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303657958864
+started,bundle,org.eclipse.compare,3.4.1.r34x_20090121,org.eclipse.compare,1303657959765
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303657961957
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303657980717
+started,bundle,com.bbn.swede.editor,2.0.2,com.bbn.swede.editor,1303657980743
+started,bundle,com.bbn.swede.library.dumpont,2.0.2,com.bbn.swede.library.dumpont,1303657980945
+opened,editor,com.bbn.swede.editor,2.0.2,com.bbn.swede.editor.OWLEditor,1303657980963
+activated,editor,com.bbn.swede.editor,2.0.2,com.bbn.swede.editor.OWLEditor,1303657980985
+activated,view,com.bbn.swede.view,2.0.2,com.bbn.swede.view.uriexplorer,1303657984427
+activated,editor,com.bbn.swede.editor,2.0.2,com.bbn.swede.editor.OWLEditor,1303657986342
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.window.maximizePart,1303657990027
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303657999188
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658000598
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658013791
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658159002
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658164591
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658166045
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658166482
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658167529
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658168201
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658174338
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658186446
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303658648362
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658651891
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303658653708

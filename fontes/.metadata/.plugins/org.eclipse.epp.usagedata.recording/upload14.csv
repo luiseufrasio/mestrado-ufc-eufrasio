@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777679959
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1303777682720
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303777690395
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1303777695027
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777698038
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777701532
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777705339
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777706384
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303777708272
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777710518
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777712967
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.undo,1303777714933
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303777716493
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777718209
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777719363
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303777722811
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777724386
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777725759
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1303777730954
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.copy,1303777737771
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.select.lineEnd,1303777739565
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1303777740345
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.file.save,1303777747084
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303777759486
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303779400677

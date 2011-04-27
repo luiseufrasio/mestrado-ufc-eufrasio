@@ -1,0 +1,18 @@
+!SESSION 2011-04-25 21:03:24.490 -----------------------------------------------
+eclipse.buildId=M20090211-1700
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2011-04-25 21:03:27.626
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2011-04-26 10:22:44.639 -----------------------------------------------
+eclipse.buildId=M20090211-1700
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2011-04-26 10:22:46.442
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
