@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303827154083
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.select.lineEnd,1303827174036
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.delete,1303827175720
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.file.save,1303827176516
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827181524
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827219993
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827235390
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827295420
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827319538
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827320349
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827320708
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827407241
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827412919
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827449969
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827450827
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827711878
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303827718508
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828089563
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828094087
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828095818
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828096473
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828109983
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828110872
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828226227
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303828229846

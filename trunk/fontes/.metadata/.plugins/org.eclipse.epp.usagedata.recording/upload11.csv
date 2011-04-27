@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776611008
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776612475
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303776616234
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303776618745
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776621178
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776622442
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1303776628136
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776629368
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776705583
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.delete.line,1303776707533
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineEnd,1303776708328
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776712041
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776713071
+no handler,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.text.contentAssist.proposals,1303776714256
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776718000
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776728640
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.edit.paste,1303776729669
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776740418
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776741728
+executed,command,org.eclipse.ui,3.4.2.M20090204-0800,org.eclipse.ui.file.save,1303776761852
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776763506
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776769824
+deactivated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776771820
+activated,workbench,org.eclipse.ui.workbench,3.4.2.M20090127-1700,,1303776772600
+executed,command,org.eclipse.ui.workbench.texteditor,3.4.1.r341_v20080827-1100,org.eclipse.ui.edit.text.goto.lineStart,1303776773926
