@@ -1,0 +1,89 @@
+@prefix map: <file:/C:/Users/Luis/Documents/Mestrado/d2r-server-0.7/mapping.rdf#> .
+@prefix vocab: <vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix amazon: <http://sites.google.com/site/luiseufrasio/amazon.owl#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+    d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+    d2rq:jdbcDSN "jdbc:mysql://127.0.0.1/amazon";
+    d2rq:username "root";
+    d2rq:password "admin";
+    jdbc:keepAlive "3600";              # sends noop-query every 3600 seconds
+#   jdbc:keepAliveQuery "SELECT 1";     # optional custom noop-query
+    .
+
+# Table product
+map:product a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "product/@@product.id@@";
+    d2rq:class amazon:Product;
+    d2rq:classDefinitionLabel "product";
+    .
+map:product_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:product;
+    d2rq:property rdfs:label;
+    d2rq:column "product.title";
+    
+    # Some properties to test property definitions
+    d2rq:propertyDefinitionLabel "label";
+    d2rq:propertyDefinitionComment "A human-readable name for the subject.";
+    d2rq:additionalPropertyDefinitionProperty map:labelDomain;
+    .
+map:product_type_book a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:product;
+    d2rq:property rdf:type;
+    d2rq:uriPattern "amazon.owl#Book";
+    d2rq:condition "product.type = 'book'";
+    .
+map:product_type_music a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:product;
+    d2rq:property rdf:type;
+    d2rq:uriPattern "amazon.owl#Music";
+    d2rq:condition "product.type = 'music'";
+    .
+map:book_publisher a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:product;
+    d2rq:property amazon:Publ;
+    d2rq:refersToClassMap map:publisher;
+    d2rq:join "product.publisher => publisher.id";
+    d2rq:condition "product.type = 'book'";
+    .
+map:music_recorder a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:product;
+    d2rq:property amazon:recorder;
+    d2rq:column "recorder.recname";
+    d2rq:join "product.recorder => recorder.id";
+    d2rq:condition "product.type = 'music'";
+    .
+
+# Table publisher
+map:publisher a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "publisher/@@publisher.id@@";
+    d2rq:class amazon:Publ;
+    d2rq:classDefinitionLabel "publisher";
+    .
+map:publisher_name a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property amazon:name;
+    d2rq:propertyDefinitionLabel "publisher->name";
+    d2rq:column "publisher.name";
+    .
+map:publisher_address a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property amazon:address;
+    d2rq:propertyDefinitionLabel "publisher->address";
+    d2rq:column "publisher.address";
+    .
+
+# Additional map for label    
+map:labelDomain a d2rq:AdditionalProperty;
+    d2rq:propertyName rdfs:domain;
+    d2rq:propertyValue rdfs:Resource;
+    .   
