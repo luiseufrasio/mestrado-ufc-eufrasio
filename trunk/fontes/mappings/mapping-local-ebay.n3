@@ -1,0 +1,139 @@
+@prefix map: <file:/C:/Users/Luis/Documents/Mestrado/d2r-server-0.7/mapping-local.n3#> .
+@prefix db: <> .
+@prefix vocab: <http://localhost:2020/vocab/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://127.0.0.1/ebay";
+	d2rq:username "root";
+	d2rq:password "admin";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+# Table offer
+map:offer a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "offer/@@offer.id@@";
+	d2rq:class vocab:offer;
+	d2rq:classDefinitionLabel "offer";
+	.
+map:offer__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property rdfs:label;
+	d2rq:pattern "offer #@@offer.id@@";
+	.
+map:offer_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property vocab:offer_id;
+	d2rq:propertyDefinitionLabel "offer id";
+	d2rq:column "offer.id";
+	d2rq:datatype xsd:int;
+	.
+map:offer_qty a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property vocab:offer_qty;
+	d2rq:propertyDefinitionLabel "offer qty";
+	d2rq:column "offer.qty";
+	d2rq:datatype xsd:int;
+	.
+map:offer_price a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property vocab:offer_price;
+	d2rq:propertyDefinitionLabel "offer price";
+	d2rq:column "offer.price";
+	d2rq:datatype xsd:decimal;
+	.
+map:offer_currency a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property vocab:offer_currency;
+	d2rq:propertyDefinitionLabel "offer currency";
+	d2rq:column "offer.currency";
+	.
+map:offer_product a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property vocab:offer_product;
+	d2rq:refersToClassMap map:product;
+	d2rq:join "offer.product => product.title";
+	.
+map:offer_seller a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:offer;
+	d2rq:property vocab:offer_seller;
+	d2rq:refersToClassMap map:seller;
+	d2rq:join "offer.seller => seller.name";
+	.
+
+# Table product
+map:product a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "product/@@product.title|urlify@@";
+	d2rq:class vocab:product;
+	d2rq:classDefinitionLabel "product";
+	.
+map:product__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property rdfs:label;
+	d2rq:pattern "product #@@product.title@@";
+	.
+map:product_type a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property vocab:product_type;
+	d2rq:propertyDefinitionLabel "product type";
+	d2rq:column "product.type";
+	.
+map:product_title a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property vocab:product_title;
+	d2rq:propertyDefinitionLabel "product title";
+	d2rq:column "product.title";
+	.
+map:product_condit a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property vocab:product_condit;
+	d2rq:propertyDefinitionLabel "product condit";
+	d2rq:column "product.condit";
+	.
+map:product_author a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property vocab:product_author;
+	d2rq:propertyDefinitionLabel "product author";
+	d2rq:column "product.author";
+	.
+map:product_year a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property vocab:product_year;
+	d2rq:propertyDefinitionLabel "product year";
+	d2rq:column "product.year";
+	d2rq:datatype xsd:int;
+	.
+map:product_publisher a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:product;
+	d2rq:property vocab:product_publisher;
+	d2rq:propertyDefinitionLabel "product publisher";
+	d2rq:column "product.publisher";
+	.
+
+# Table seller
+map:seller a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "seller/@@seller.name|urlify@@";
+	d2rq:class vocab:seller;
+	d2rq:classDefinitionLabel "seller";
+	.
+map:seller__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:seller;
+	d2rq:property rdfs:label;
+	d2rq:pattern "seller #@@seller.name@@";
+	.
+map:seller_name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:seller;
+	d2rq:property vocab:seller_name;
+	d2rq:propertyDefinitionLabel "seller name";
+	d2rq:column "seller.name";
+	.
+
