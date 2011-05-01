@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix amazon: <http://sites.google.com/site/luiseufrasio/amazon.owl#> .
+@prefix a: <http://sites.google.com/site/luiseufrasio/amazon.owl#> .
 @prefix jdbc: <http://d2rq.org/terms/jdbc/> .
 
 map:database a d2rq:Database;
@@ -18,72 +18,76 @@ map:database a d2rq:Database;
 #   jdbc:keepAliveQuery "SELECT 1";     # optional custom noop-query
     .
 
-# Table product
-map:product a d2rq:ClassMap;
+# Table book
+map:book a d2rq:ClassMap;
     d2rq:dataStorage map:database;
-    d2rq:uriPattern "product/@@product.id@@";
-    d2rq:class amazon:Product;
-    d2rq:classDefinitionLabel "product";
+    d2rq:uriPattern "book/@@book.title|urlify@@";
+    d2rq:class a:Book;
+    d2rq:classDefinitionLabel "book";
     .
-map:product_title a d2rq:PropertyBridge;
-    d2rq:belongsToClassMap map:product;
+map:book__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
     d2rq:property rdfs:label;
-    d2rq:column "product.title";
-    
-    # Some properties to test property definitions
-    d2rq:propertyDefinitionLabel "label";
-    d2rq:propertyDefinitionComment "A human-readable name for the subject.";
-    d2rq:additionalPropertyDefinitionProperty map:labelDomain;
+    d2rq:pattern "book #@@book.title@@";
     .
-map:product_type_book a d2rq:PropertyBridge;
-    d2rq:belongsToClassMap map:product;
-    d2rq:property rdf:type;
-    d2rq:uriPattern "amazon.owl#Book";
-    d2rq:condition "product.type = 'book'";
+map:book_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property rdfs:label;
+    d2rq:column "book.title";
     .
-map:product_type_music a d2rq:PropertyBridge;
-    d2rq:belongsToClassMap map:product;
-    d2rq:property rdf:type;
-    d2rq:uriPattern "amazon.owl#Music";
-    d2rq:condition "product.type = 'music'";
-    .
-map:book_publisher a d2rq:PropertyBridge;
-    d2rq:belongsToClassMap map:product;
-    d2rq:property amazon:Publ;
+map:book_pub a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property a:Publ;
     d2rq:refersToClassMap map:publisher;
-    d2rq:join "product.publisher => publisher.id";
-    d2rq:condition "product.type = 'book'";
+    d2rq:join "book.pub => publisher.name";
     .
-map:music_recorder a d2rq:PropertyBridge;
-    d2rq:belongsToClassMap map:product;
-    d2rq:property amazon:recorder;
+
+# Table music
+map:music a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "music/@@music.title|urlify@@";
+    d2rq:class a:Music;
+    d2rq:classDefinitionLabel "music";
+    .
+map:music__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property rdfs:label;
+    d2rq:pattern "music #@@music.title@@";
+    .
+map:music_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property rdfs:label;
+    d2rq:column "music.title";
+    .
+map:music_rec a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property a:recorder;
     d2rq:column "recorder.recname";
-    d2rq:join "product.recorder => recorder.id";
-    d2rq:condition "product.type = 'music'";
+    d2rq:join "music.rec => recorder.recname";
     .
 
 # Table publisher
 map:publisher a d2rq:ClassMap;
     d2rq:dataStorage map:database;
-    d2rq:uriPattern "publisher/@@publisher.id@@";
-    d2rq:class amazon:Publ;
+    d2rq:uriPattern "publisher/@@publisher.name|urlify@@";
+    d2rq:class a:Publ;
     d2rq:classDefinitionLabel "publisher";
     .
+map:publisher__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property rdfs:label;
+    d2rq:pattern "publisher #@@publisher.name@@";
+    .    
 map:publisher_name a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:publisher;
-    d2rq:property amazon:name;
+    d2rq:property a:name;
     d2rq:propertyDefinitionLabel "publisher->name";
     d2rq:column "publisher.name";
     .
 map:publisher_address a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:publisher;
-    d2rq:property amazon:address;
+    d2rq:property a:address;
     d2rq:propertyDefinitionLabel "publisher->address";
     d2rq:column "publisher.address";
     .
 
-# Additional map for label    
-map:labelDomain a d2rq:AdditionalProperty;
-    d2rq:propertyName rdfs:domain;
-    d2rq:propertyValue rdfs:Resource;
-    .   
