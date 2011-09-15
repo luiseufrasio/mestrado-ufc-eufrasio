@@ -1,0 +1,724 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY xsd2 "http://www.semanticweb.org/ontologies/2011/7/iswc.owl#xsd:" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2011/7/iswc.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd2="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#xsd:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Literal -->
+
+    <rdf:Description rdf:about="&rdfs;Literal">
+        <owl:equivalentClass rdf:resource="&xsd;string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#belongsTo">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#comprisesOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#comprisesOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#comprisesOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasAuthor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isAuthorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasChild">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasParent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasEmployee -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasEmployee">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#worksAt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasPaper -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasPaper">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasParent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasParent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasTopic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasTopic">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isAuthorOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPaperOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPaperOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPartOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isWrittenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isWrittenBy">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#writesAbout"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#worksAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#worksAt">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#writesAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#writesAbout">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#abstract -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#abstract">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#address">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#country">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#date">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#datum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#datum">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#firstName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#homePage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#homePage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#lastName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#phone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#phone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#photo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#photo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#postCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#postCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#publish -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#publish">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#location"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasPaper"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#date"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#datum"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Department -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Department">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#FullProfessor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#FullProfessor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Researcher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Institute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Institute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#country"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#comprisesOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#postCode"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#address"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasEmployee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#location"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#homePage"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasTopic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#publish"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#title"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#year"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPaperOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#abstract"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#hasAuthor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#homePage"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#email"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#phone"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#worksAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#photo"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#firstName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isAuthorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#writesAbout"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#lastName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#address"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Researcher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Researcher">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#uri"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isWrittenBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/7/iswc.owl#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Conference"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Organization"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Paper"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Topic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Department"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#Institute"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2011/7/iswc.owl#University"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
