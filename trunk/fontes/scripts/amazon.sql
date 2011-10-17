@@ -1,4 +1,4 @@
-CREATE TABLE Publisher (
+CREATE TABLE Publ (
     name VARCHAR(100) NOT NULL,
     address VARCHAR(200) NOT NULL,
     primary key(name)
@@ -15,10 +15,10 @@ CREATE TABLE Book (
     currency VARCHAR(20) NOT NULL,    
     isbn VARCHAR(20) NULL,
     author VARCHAR(100) NULL,
-    pub VARCHAR(100) NULL,
+    publisher VARCHAR(100) NULL,
     PRIMARY KEY(title),
-    FOREIGN KEY(pub)
-        REFERENCES Publisher(name)
+    FOREIGN KEY(publisher)
+        REFERENCES Publ(name)
 );
 
 CREATE TABLE Music (
@@ -45,7 +45,7 @@ CREATE TABLE PC_HW (
     PRIMARY KEY(title)
 );
 
-INSERT INTO Publisher
+INSERT INTO Publ
     VALUES ('CAMPUS', 'Rua 7 Setembro, 111 an 16- Centro - Rio de Janeiro - RJ');
     
 INSERT INTO Book
