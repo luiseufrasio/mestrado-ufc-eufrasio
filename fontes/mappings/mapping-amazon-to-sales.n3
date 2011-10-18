@@ -1,0 +1,93 @@
+@prefix map: <file:/C:/Users/Luis/Documents/Mestrado/d2r-server-0.7/mapping.rdf#> .
+@prefix vocab: <vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix s: <http://semanticweb.org/images/7/7e/Sales.owl#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+    d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+    d2rq:jdbcDSN "jdbc:mysql://127.0.0.1/amazon";
+    d2rq:username "root";
+    d2rq:password "admin";
+    jdbc:keepAlive "3600";              # sends noop-query every 3600 seconds
+#   jdbc:keepAliveQuery "SELECT 1";     # optional custom noop-query
+    .
+
+# Table book
+map:book a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "book/@@book.title|urlify@@";
+    d2rq:class s:Book;
+    d2rq:classDefinitionLabel "book";
+    .
+map:book__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property rdfs:label;
+    d2rq:pattern "book #@@book.title@@";
+    .
+map:book_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property s:title;
+    d2rq:column "book.title";
+    .
+map:book_pub a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property s:pub;
+    d2rq:refersToClassMap map:publisher;
+    d2rq:join "book.publisher => publisher.name";
+    .
+
+# Table music
+map:music a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "music/@@music.title|urlify@@";
+    d2rq:class s:Music;
+    d2rq:classDefinitionLabel "music";
+    .
+map:music__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property rdfs:label;
+    d2rq:pattern "music #@@music.title@@";
+    .
+map:music_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property s:title;
+    d2rq:column "music.title";
+    .
+map:music_rec a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property s:recorder;
+    d2rq:column "recorder.recname";
+    d2rq:join "music.rec => recorder.recname";
+    .
+
+# Table publisher
+map:publisher a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "publisher/@@publisher.name|urlify@@";
+    d2rq:class s:Publ;
+    d2rq:classDefinitionLabel "publisher";
+    .
+map:publisher__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property rdfs:label;
+    d2rq:pattern "publisher #@@publisher.name@@";
+    .    
+map:publisher_name a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property s:name;
+    d2rq:propertyDefinitionLabel "publisher->name";
+    d2rq:column "publisher.name";
+    .
+map:publisher_address a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property s:address;
+    d2rq:propertyDefinitionLabel "publisher->address";
+    d2rq:column "publisher.address";
+    .
+
