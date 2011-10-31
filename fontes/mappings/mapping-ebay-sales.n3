@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix e: <http://sites.google.com/site/luiseufrasio/ebay.owl#> .
+@prefix s: <http://semanticweb.org/images/7/7e/Sales.owl#> .
 @prefix jdbc: <http://d2rq.org/terms/jdbc/> .
 
 map:database a d2rq:Database;
@@ -22,7 +22,7 @@ map:database a d2rq:Database;
 map:book a d2rq:ClassMap;
     d2rq:dataStorage map:database;
     d2rq:uriPattern "book/@@product.title|urlify@@";
-    d2rq:class e:Book;
+    d2rq:class s:Book;
     d2rq:classDefinitionLabel "book";
     d2rq:condition "product.type='book'";
     .
@@ -33,12 +33,12 @@ map:book__label a d2rq:PropertyBridge;
     .
 map:book_title a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:book;
-    d2rq:property rdfs:label;
+    d2rq:property s:title;
     d2rq:column "product.title";
     .
 map:book_pub a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:book;
-    d2rq:property e:Publ;
+    d2rq:property s:pub;
     d2rq:uriPattern "publisher/@@product.publisher|urlify@@";
     .
 
@@ -46,7 +46,7 @@ map:book_pub a d2rq:PropertyBridge;
 map:publisher a d2rq:ClassMap;
     d2rq:dataStorage map:database;
     d2rq:uriPattern "publisher/@@product.publisher|urlify@@";
-    d2rq:class e:Publ;
+    d2rq:class s:Publ;
     d2rq:classDefinitionLabel "publisher";
     .
 map:publisher__label a d2rq:PropertyBridge;
@@ -56,7 +56,7 @@ map:publisher__label a d2rq:PropertyBridge;
     .    
 map:publisher_name a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:publisher;
-    d2rq:property e:name;
+    d2rq:property s:name;
     d2rq:propertyDefinitionLabel "publisher->name";
     d2rq:column "product.publisher";
     .
@@ -65,7 +65,7 @@ map:publisher_name a d2rq:PropertyBridge;
 map:music a d2rq:ClassMap;
     d2rq:dataStorage map:database;
     d2rq:uriPattern "music/@@product.title|urlify@@";
-    d2rq:class e:Music;
+    d2rq:class s:Music;
     d2rq:classDefinitionLabel "music";
     d2rq:condition "product.type='music'";
     .
@@ -76,8 +76,6 @@ map:music__label a d2rq:PropertyBridge;
     .
 map:music_title a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:music;
-    d2rq:property rdfs:label;
+    d2rq:property s:title;
     d2rq:column "product.title";
     .
-    
-
