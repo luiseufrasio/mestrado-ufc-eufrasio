@@ -48,6 +48,7 @@ map:publisher a d2rq:ClassMap;
     d2rq:uriPattern "publisher/@@product.publisher|urlify@@";
     d2rq:class s:Publ;
     d2rq:classDefinitionLabel "publisher";
+    d2rq:containsDuplicates "true";
     .
 map:publisher__label a d2rq:PropertyBridge;
     d2rq:belongsToClassMap map:publisher;
