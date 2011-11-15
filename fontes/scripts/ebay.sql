@@ -35,6 +35,9 @@ INSERT INTO Product
     
 INSERT INTO Product
     VALUES ('book', 'Chico Buarque Letra E Musica, V.1', 'novo', 'Chico Buarque', 2004, 'Companhia das Letras');
+
+INSERT INTO Product
+    VALUES ('book', 'O Livro das Religioes', 'novo', 'Jostein Gaarder', 2000, 'Companhia das Letras');
     
 INSERT INTO Product
     VALUES ('music', 'A BANDA', 'antiga', 'Chico Buarque', null, null);
