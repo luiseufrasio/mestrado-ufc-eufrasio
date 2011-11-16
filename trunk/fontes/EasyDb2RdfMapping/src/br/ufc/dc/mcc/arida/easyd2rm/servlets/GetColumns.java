@@ -41,14 +41,10 @@ public class GetColumns extends HttpServlet {
 	 */
 	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("sim");
-		
 		Object o = request.getSession().getAttribute("schema");
 		if (o != null) {
 			DatabaseSchemaInspector schema = (DatabaseSchemaInspector) o;
-			
 			String tableName = request.getParameter("tableName");
-			System.out.println(tableName);
 			
 			StringBuffer cols = new StringBuffer("");
 			List<RelationName> tables = schema.listTableNames();
@@ -73,5 +69,4 @@ public class GetColumns extends HttpServlet {
 			response.sendRedirect("pages/configDatabase.jsp?msg=true");
 		}
 	}
-
 }
