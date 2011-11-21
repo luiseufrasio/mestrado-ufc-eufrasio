@@ -20,6 +20,8 @@
 	}
 %>
 <script type="text/javascript" src="../javascripts/jquery-1.7.js"></script>
+<script type="text/javascript" src="../javascripts/simpleAutoComplete.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/simpleAutoComplete.css" />
 </head>
 <body>
 	<h1>Easy RDB to RDF Mapping</h1>
@@ -75,7 +77,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass1">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass1").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="class">
@@ -113,7 +120,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass2">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass2").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="class">
@@ -176,7 +188,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass3">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass3").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="class">
@@ -242,7 +259,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass4">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass4").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="class">
@@ -338,7 +360,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass5">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass5").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="class">
@@ -401,7 +428,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass6">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass6").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="class">
@@ -474,7 +506,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass7">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass7").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="objProperty">
@@ -530,7 +567,12 @@
 			</tr>
 			<tr>
 				<td align="right"><input type="text" name="prefix"
-					style="text-align: right">
+					style="text-align: right" id="prefixClass8">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#prefixClass8").simpleAutoComplete("../GetOntologies");
+					});
+				</script>
 				</td>
 				<td>:</td>
 				<td align="left"><input type="text" name="objProperty">

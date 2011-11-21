@@ -10,11 +10,11 @@
 <link rel="stylesheet" type="text/css" href="../css/simpleAutoComplete.css" />
 <script type="text/javascript">
 	function openClose(icon, table) {
-		if (icon.src.indexOf('setDown.jpg') != -1) {
-			icon.src = '../images/setDir.jpg';
+		if (icon.src.indexOf('close.jpg') != -1) {
+			icon.src = '../images/open.jpg';
 			$("#" + table).css("display","none");
 		} else {
-			icon.src = '../images/setDown.jpg';
+			icon.src = '../images/close.jpg';
 			$("#" + table).css("display","inline");
 		}
 	}
@@ -53,7 +53,7 @@
 	<form action="ImportOntologies" method="post">
 		<h4>Ontologies Configuration</h4>
 		
-		<h5><a href="#"><img alt="open" src="../images/setDir.jpg" border="0" 
+		<h5><a href="#"><img alt="open" src="../images/open.jpg" border="0" 
 			onclick="javascript: openClose(this, 'divOntology');"></a> New Ontology</h5>
 		<div id="divOntology" style="display: none;">
 		<table>
@@ -112,7 +112,7 @@
 		</table>
 		</div>
 		
-		<h5><a href="#"><img border="0" alt="open" src="../images/setDir.jpg" onclick="javascript: openClose(this, 'tblClass');"></a> New Class</h5>
+		<h5><a href="#"><img border="0" alt="open" src="../images/open.jpg" onclick="javascript: openClose(this, 'tblClass');"></a> New Class</h5>
 		<table id="tblClass" style="display: none;">
 			<tr>
 				<th align="right">prefix</th>
