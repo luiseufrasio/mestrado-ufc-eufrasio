@@ -2,12 +2,13 @@
 <%@page import="java.io.FileInputStream"%>
 <%@page import="java.util.Properties"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Easy RDB to RDF Mapping</title>
+<script type="text/javascript" src="../javascripts/jquery-1.7.js"></script>
 <%
 	String url = "", driver = "", user = "";
 	File f = new File("conn.properties");
@@ -26,7 +27,7 @@
 	}
 %>
 </head>
-<body>
+<body onload="$('#passwd').focus();">
 	<h1>Easy RDB to RDF Mapping</h1>
 	<h4>Phases:</h4>
 	<ol>
@@ -58,7 +59,7 @@
 			</tr>
 			<tr>
 				<td align="right">password:</td>
-				<td align="left"><input type="password" name="password" size="30" />
+				<td align="left"><input id="passwd" type="password" name="password" size="30" />
 				</td>
 			</tr>
 			<tr>
