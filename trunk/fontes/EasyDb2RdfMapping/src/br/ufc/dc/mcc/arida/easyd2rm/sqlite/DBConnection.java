@@ -1,107 +1,74 @@
 package br.ufc.dc.mcc.arida.easyd2rm.sqlite;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
-import br.ufc.dc.mcc.arida.easyd2rm.model.Ontology;
 
 public class DBConnection {
-	private Connection conn;
-	private Statement stm;
+	public static Connection conn;
 
-	public static void createDB(String file) throws SQLException,
-			ClassNotFoundException, IOException {
-		File f = new File(file);
-
-		if (f.exists()) {
-			return;
+	static {
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:sqlite:db2rdf.db");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
-		f.createNewFile();
+	public static void createDB() throws SQLException, ClassNotFoundException,
+			IOException {
+		Statement stm = conn.createStatement();
 
-		DBConnection db = new DBConnection(file);
-
-		db.stm.executeUpdate("CREATE TABLE Ontology ("
+		stm.executeUpdate("CREATE TABLE IF NOT EXISTS Ontology ("
 				+ "prefix varchar(20) PRIMARY KEY NOT NULL,"
 				+ "uri varchar(100));");
 
-		db.stm.close();
-		db.conn.close();
-	}
+		stm.executeUpdate("CREATE TABLE IF NOT EXISTS RdfClass ("
+				+ "id integer PRIMARY KEY NOT NULL," 
+				+ "prefix varchar(20),"
+				+ "name varchar(50),"
+				+ "FOREIGN KEY(prefix) REFERENCES Ontology(prefix) ON DELETE CASCADE,"
+				+ "UNIQUE(prefix,name));");
 
-	public DBConnection(String file) throws SQLException,
-			ClassNotFoundException {
-		Class.forName("org.sqlite.JDBC");
-		this.conn = DriverManager.getConnection("jdbc:sqlite:" + file);
-		this.stm = this.conn.createStatement();
-	}
+		stm.executeUpdate("CREATE TABLE IF NOT EXISTS DataProperty ("
+				+ "id integer PRIMARY KEY NOT NULL," 
+				+ "prefix varchar(20),"
+				+ "name varchar(50),"
+				+ "FOREIGN KEY(prefix) REFERENCES Ontology(prefix) ON DELETE CASCADE,"
+				+ "UNIQUE(prefix,name));");
 
-	public void addOntology(Ontology o) throws SQLException {
-		this.stm = this.conn.createStatement();
-		this.stm.executeUpdate("INSERT INTO Ontology VALUES ('" + o.getPrefix()
-				+ "','" + o.getUri() + "')");
-	}
+		stm.executeUpdate("CREATE TABLE IF NOT EXISTS ObjectProperty ("
+				+ "id integer PRIMARY KEY NOT NULL," 
+				+ "prefix varchar(20),"
+				+ "name varchar(50),"
+				+ "FOREIGN KEY(prefix) REFERENCES Ontology(prefix) ON DELETE CASCADE,"
+				+ "UNIQUE(prefix,name));");
 
-	public void removeOntology(String prefix) {
-		try {
-			this.stm = this.conn.createStatement();
-			this.stm.executeUpdate("DELETE FROM Ontology WHERE prefix=\""
-					+ prefix + "\"");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+		stm.executeUpdate("CREATE TABLE IF NOT EXISTS DomainLiteral ("
+				+ "id integer PRIMARY KEY NOT NULL," 
+				+ "idDataProperty integer,"
+				+ "class integer," 
+				+ "literalType varchar(20),"
+				+ "FOREIGN KEY(class) REFERENCES RdfClass(id) ON DELETE CASCADE,"
+				+ "FOREIGN KEY(idDataProperty) REFERENCES DataProperty(id) ON DELETE CASCADE);");
 
-	public void atualizaOntology(Ontology o) {
-		try {
-			this.stm = this.conn.createStatement();
-			this.stm.executeUpdate("UPDATE Recordes SET prefix=\""
-					+ o.getPrefix() + "\"" + "WHERE uri=\"" + o.getUri() + "\"");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+		stm.executeUpdate("CREATE TABLE IF NOT EXISTS DomainRange ("
+				+ "id integer PRIMARY KEY NOT NULL," 
+				+ "idObjectProperty integer,"
+				+ "classDomain integer," 
+				+ "classRange integer,"
+				+ "FOREIGN KEY(classDomain) REFERENCES RdfClass(id) ON DELETE CASCADE,"
+				+ "FOREIGN KEY(classRange) REFERENCES RdfClass(id) ON DELETE CASCADE,"
+				+ "FOREIGN KEY(idObjectProperty) REFERENCES ObjectProperty(id) ON DELETE CASCADE);");
 
-	public List<Ontology> getAll() {
-		List<Ontology> oList = new ArrayList<Ontology>();
-		ResultSet rs;
-		try {
-			rs = this.stm.executeQuery("SELECT * FROM Ontology "
-					+ "ORDER BY prefix ASC ");
-			while (rs.next()) {
-				oList.add(new Ontology(rs.getString("prefix"), rs
-						.getString("uri")));
-			}
-			rs.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return oList;
-	}
-
-	public List<Ontology> findAllByPrefix(String p) {
-		List<Ontology> oList = new ArrayList<Ontology>();
-		ResultSet rs;
-		try {
-			rs = this.stm.executeQuery("SELECT * FROM Ontology Where prefix like '" + p +"%' "
-					+ " ORDER BY prefix ASC ");
-			while (rs.next()) {
-				oList.add(new Ontology(rs.getString("prefix"), rs
-						.getString("uri")));
-			}
-			rs.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return oList;
+		stm.close();
 	}
 }

@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ufc.dc.mcc.arida.easyd2rm.model.Ontology;
-import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.OntologyDAO;
+import br.ufc.dc.mcc.arida.easyd2rm.model.RdfClass;
+import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.ClassDAO;
 
 /**
  * Servlet implementation class GetOntologies
  */
-@WebServlet(description = "recupera todas as ontologias cadastradas", urlPatterns = { "/GetOntologies" })
-public class GetOntologies extends HttpServlet {
+@WebServlet(description = "recupera todas as classes cadastradas", urlPatterns = { "/GetClasses" })
+public class GetClasses extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetOntologies() {
+    public GetClasses() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,29 +40,29 @@ public class GetOntologies extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			OntologyDAO oDAO = new OntologyDAO();
+			ClassDAO cDAO = new ClassDAO();
 			
 			StringBuffer html = new StringBuffer("");
 			
-			String p = request.getParameter("query");
-			if(p != null) {
-				List<Ontology> list = oDAO.findAllByPrefix(p);
+			String n = request.getParameter("query");
+			if(n != null) {
+				List<RdfClass> list = cDAO.findAllByName(n);
 				
 				html.append("<ul>\n");
-				for (Ontology ontology : list) {
-					String prefix = ontology.getPrefix();
-					html.append("\t<li id='autocomplete_'" + prefix + " rel='" + prefix + "'>" + prefix + "</li>\n");
+				for (RdfClass rdfClass : list) {
+					String name = rdfClass.getName();
+					html.append("\t<li id='autocomplete_'" + name + " rel='" + name + "'>" + name + "</li>\n");
 				}
 				html.append("</ul>");
 			} else {
-				List<Ontology> list = oDAO.findAll();
+				List<RdfClass> list = cDAO.findAll();
 				
-				for (Ontology ontology : list) {
+				for (RdfClass rdfClass : list) {
 					html.append("<tr>" 
-							+ "<td>" + ontology.getPrefix() + "</td>"
-							+ "<td>" + ontology.getUri() + "</td>"
+							+ "<td>" + rdfClass.getPrefix() + "</td>"
+							+ "<td>" + rdfClass.getName() + "</td>"
 							+ "<td align=\"center\"><a href=\"#\" onclick=\"javascript: removeRow(this, '" 
-							+ ontology.getPrefix() + "', 'Ontology');\"><img src=\"../images/del.jpg\" border=\"0\"></a></td>"
+							+ rdfClass.getId() + "', 'Class');\"><img src=\"../images/del.jpg\" border=\"0\"></a></td>"
 							+ "</tr>");
 				}
 			}
