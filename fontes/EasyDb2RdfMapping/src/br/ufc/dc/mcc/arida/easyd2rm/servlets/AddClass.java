@@ -9,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ufc.dc.mcc.arida.easyd2rm.model.Ontology;
-import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.OntologyDAO;
+import br.ufc.dc.mcc.arida.easyd2rm.model.RdfClass;
+import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.ClassDAO;
 
-/**
- * Servlet implementation class AddOntology
- */
-@WebServlet(description = "adiciona uma ontologia na base sqllite", urlPatterns = { "/AddOntology" })
-public class AddOntology extends HttpServlet {
+@WebServlet(description = "adiciona uma classe rdf na base sqllite", urlPatterns = { "/AddClass" })
+public class AddClass extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddOntology() {
+    public AddClass() {
         super();
     }
 
@@ -38,15 +35,15 @@ public class AddOntology extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			OntologyDAO oDAO = new OntologyDAO();
-			Ontology o = new Ontology(request.getParameter("prefix"), request.getParameter("uri"));
+			ClassDAO cDAO = new ClassDAO();
+			RdfClass c = new RdfClass(request.getParameter("prefix"), request.getParameter("name"));
 			
-			oDAO.add(o);
+			int id = cDAO.add(c);
 			
-			response.getWriter().write("ok");
+			response.getWriter().write(id);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			response.getWriter().write(e.getMessage());
+			response.getWriter().write("erro");
 		}		
 	}
 }

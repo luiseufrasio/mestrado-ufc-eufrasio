@@ -9,21 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ufc.dc.mcc.arida.easyd2rm.model.Ontology;
-import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.OntologyDAO;
+import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.ClassDAO;
 
-/**
- * Servlet implementation class AddOntology
- */
-@WebServlet(description = "adiciona uma ontologia na base sqllite", urlPatterns = { "/AddOntology" })
-public class AddOntology extends HttpServlet {
+@WebServlet(description = "deleta uma classe", urlPatterns = { "/DelClass" })
+public class DelClass extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddOntology() {
+    public DelClass() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -38,15 +35,14 @@ public class AddOntology extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			OntologyDAO oDAO = new OntologyDAO();
-			Ontology o = new Ontology(request.getParameter("prefix"), request.getParameter("uri"));
+			ClassDAO cDAO = new ClassDAO();
 			
-			oDAO.add(o);
+			cDAO.remove(Integer.parseInt(request.getParameter("id")));
 			
 			response.getWriter().write("ok");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			response.getWriter().write(e.getMessage());
-		}		
+		}
 	}
 }

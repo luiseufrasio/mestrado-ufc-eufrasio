@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ufc.dc.mcc.arida.easyd2rm.sqlite.DBConnection;
+import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.OntologyDAO;
 
 /**
  * Servlet implementation class DelOntology
@@ -38,15 +38,12 @@ public class DelOntology extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			DBConnection db = new DBConnection("db2rdf.db");
+			OntologyDAO oDAO = new OntologyDAO();
 			
-			db.removeOntology(request.getParameter("prefix"));
+			oDAO.remove(request.getParameter("prefix"));
 			
 			response.getWriter().write("ok");
 		} catch (SQLException e) {
-			e.printStackTrace();
-			response.getWriter().write(e.getMessage());
-		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			response.getWriter().write(e.getMessage());
 		}

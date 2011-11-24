@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ufc.dc.mcc.arida.easyd2rm.model.Ontology;
-import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.OntologyDAO;
+import br.ufc.dc.mcc.arida.easyd2rm.model.DataProperty;
+import br.ufc.dc.mcc.arida.easyd2rm.sqlite.dao.DataPropertyDAO;
 
 /**
  * Servlet implementation class GetOntologies
  */
-@WebServlet(description = "recupera todas as ontologias cadastradas", urlPatterns = { "/GetOntologies" })
-public class GetOntologies extends HttpServlet {
+@WebServlet(description = "recupera todas as dataProperties cadastradas", urlPatterns = { "/GetDataProperties" })
+public class GetDataProperties extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetOntologies() {
+    public GetDataProperties() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,29 +40,30 @@ public class GetOntologies extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			OntologyDAO oDAO = new OntologyDAO();
+			DataPropertyDAO dDAO = new DataPropertyDAO();
 			
 			StringBuffer html = new StringBuffer("");
 			
-			String p = request.getParameter("query");
-			if(p != null) {
-				List<Ontology> list = oDAO.findAllByPrefix(p);
+			String n = request.getParameter("query");
+			if(n != null) {
+				List<DataProperty> list = dDAO.findAllByName(n);
 				
 				html.append("<ul>\n");
-				for (Ontology ontology : list) {
-					String prefix = ontology.getPrefix();
-					html.append("\t<li id='autocomplete_'" + prefix + " rel='" + prefix + "'>" + prefix + "</li>\n");
+				for (DataProperty dataProperty : list) {
+					String name = dataProperty.getName();
+					html.append("\t<li id='autocomplete_'" + name + " rel='" + name + "'>" + name + "</li>\n");
 				}
 				html.append("</ul>");
 			} else {
-				List<Ontology> list = oDAO.findAll();
+				List<DataProperty> list = dDAO.findAll();
 				
-				for (Ontology ontology : list) {
+				for (DataProperty dataProperty : list) {
 					html.append("<tr>" 
-							+ "<td>" + ontology.getPrefix() + "</td>"
-							+ "<td>" + ontology.getUri() + "</td>"
+							+ "<td>" + dataProperty.getPrefix() + "</td>"
+							+ "<td>" + dataProperty.getName() + "</td>"
+							+ "<td align='center'><input type=\"radio\" name=\"rDomains\" onclick=\"showDomains('" + dataProperty.getId() + "', this)\"></td>"
 							+ "<td align=\"center\"><a href=\"#\" onclick=\"javascript: removeRow(this, '" 
-							+ ontology.getPrefix() + "', 'Ontology');\"><img src=\"../images/del.jpg\" border=\"0\"></a></td>"
+							+ dataProperty.getId() + "', 'DataProperty');\"><img src=\"../images/del.jpg\" border=\"0\"></a></td>"
 							+ "</tr>");
 				}
 			}

@@ -28,7 +28,7 @@ public class ContextListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent arg0) {
         try {
-			DBConnection.createDB("db2rdf.db");
+			DBConnection.createDB();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {

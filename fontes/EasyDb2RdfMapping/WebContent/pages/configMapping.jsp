@@ -85,7 +85,12 @@
 				</script>
 				</td>
 				<td>:</td>
-				<td align="left"><input type="text" name="class">
+				<td align="left"><input type="text" name="class" id="nameClass1">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#nameClass1").simpleAutoComplete("../GetClasses");
+					});
+				</script>
 				</td>
 				<td><img src="../images/seta.jpg">
 				</td>
@@ -128,7 +133,12 @@
 				</script>
 				</td>
 				<td>:</td>
-				<td align="left"><input type="text" name="class">
+				<td align="left"><input type="text" name="class" id="nameClass2">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#nameClass2").simpleAutoComplete("../GetClasses");
+					});
+				</script>
 				</td>
 				<td><img src="../images/seta.jpg">
 				</td>
@@ -196,7 +206,12 @@
 				</script>
 				</td>
 				<td>:</td>
-				<td align="left"><input type="text" name="class">
+				<td align="left"><input type="text" name="class" id="nameClass3">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#nameClass3").simpleAutoComplete("../GetClasses");
+					});
+				</script>
 				</td>
 				<td>.</td>
 				<td align="left"><input type="text" name="dataProperty">
@@ -267,7 +282,12 @@
 				</script>
 				</td>
 				<td>:</td>
-				<td align="left"><input type="text" name="class">
+				<td align="left"><input type="text" name="class" id="nameClass4">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#nameClass4").simpleAutoComplete("../GetClasses");
+					});
+				</script>
 				</td>
 				<td>.</td>
 				<td align="left"><input type="text" name="dataProperty">
@@ -368,7 +388,12 @@
 				</script>
 				</td>
 				<td>:</td>
-				<td align="left"><input type="text" name="class">
+				<td align="left"><input type="text" name="class" id="nameClass5">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#nameClass5").simpleAutoComplete("../GetClasses");
+					});
+				</script>
 				</td>
 				<td><img src="../images/seta.jpg">
 				</td>
@@ -436,7 +461,12 @@
 				</script>
 				</td>
 				<td>:</td>
-				<td align="left"><input type="text" name="class">
+				<td align="left"><input type="text" name="class" id="nameClass6">
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#nameClass6").simpleAutoComplete("../GetClasses");
+					});
+				</script>
 				</td>
 				<td><img src="../images/seta.jpg">
 				</td>
