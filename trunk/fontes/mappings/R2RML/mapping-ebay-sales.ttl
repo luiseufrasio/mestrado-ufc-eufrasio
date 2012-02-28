@@ -1,0 +1,68 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix s: <http://semanticweb.org/images/7/7e/Sales.owl#> .
+
+# Table product (type='book')
+map:book a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "book/@@product.title|urlify@@";
+    d2rq:class s:Book;
+    d2rq:classDefinitionLabel "book";
+    d2rq:condition "product.type='book'";
+    .
+map:book__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property rdfs:label;
+    d2rq:pattern "book #@@product.title@@";
+    .
+map:book_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property s:title;
+    d2rq:column "product.title";
+    .
+map:book_pub a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:book;
+    d2rq:property s:pub;
+    d2rq:uriPattern "publisher/@@product.publisher|urlify@@";
+    .
+
+# Table publisher
+map:publisher a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "publisher/@@product.publisher|urlify@@";
+    d2rq:class s:Publ;
+    d2rq:classDefinitionLabel "publisher";
+    d2rq:containsDuplicates "true";
+    .
+map:publisher__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property rdfs:label;
+    d2rq:pattern "publisher #@@product.publisher@@";
+    .    
+map:publisher_name a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:publisher;
+    d2rq:property s:name;
+    d2rq:propertyDefinitionLabel "publisher->name";
+    d2rq:column "product.publisher";
+    .
+
+# Table music
+map:music a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    d2rq:uriPattern "music/@@product.title|urlify@@";
+    d2rq:class s:Music;
+    d2rq:classDefinitionLabel "music";
+    d2rq:condition "product.type='music'";
+    .
+map:music__label a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property rdfs:label;
+    d2rq:pattern "music #@@product.title@@";
+    .
+map:music_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:music;
+    d2rq:property s:title;
+    d2rq:column "product.title";
+    .
