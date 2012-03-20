@@ -16,7 +16,7 @@
         rr:predicate s:pub;
         rr:objectMap [ 
             rr:parentTriplesMap <#TriplesMap2>;
-                rr:joinCondition [
+            rr:joinCondition [
                 rr:child "publisher";
                 rr:parent "name";
             ];
