@@ -2,7 +2,7 @@
 @prefix s: <http://semanticweb.org/images/7/7e/Sales.owl#> .
 
 # Table book
-<#TriplesMap1>
+<#BookTriplesMap>
     rr:logicalTable [ rr:tableName "book" ];
     rr:subjectMap [
         rr:template "book/{title}";
@@ -15,7 +15,7 @@
     rr:predicateObjectMap [
         rr:predicate s:pub;
         rr:objectMap [ 
-            rr:parentTriplesMap <#TriplesMap2>;
+            rr:parentTriplesMap <#PublTriplesMap>;
             rr:joinCondition [
                 rr:child "publisher";
                 rr:parent "name";
@@ -23,9 +23,9 @@
         ];
     ].
     
-# Table publisher
-<#TriplesMap2>
-    rr:logicalTable [ rr:tableName "publisher" ];
+# Table publ
+<#PublTriplesMap>
+    rr:logicalTable [ rr:tableName "publ" ];
     rr:subjectMap [
         rr:template "publisher/{name}";
         rr:class s:Publ;
@@ -40,7 +40,7 @@
     ].
 
 # Table music
-<#TriplesMap3>
+<#MusicTriplesMap>
     rr:logicalTable [ rr:sqlQuery """
         SELECT m.*, r.recname
         FROM music m, recorder r

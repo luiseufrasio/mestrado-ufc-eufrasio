@@ -1,0 +1,152 @@
+@base <http://www.amazon.com/>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Table book
+<#BookTriplesMap>
+    rr:logicalTable [ rr:tableName "book" ];
+    rr:subjectMap [
+        rr:template "book/title-{title}";
+        rr:class <book>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <book#title>;
+        rr:objectMap [ rr:column "title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <book#price>;
+        rr:objectMap [ 
+            rr:column "price";
+            rr:datatype xsd:decimal
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <book#currency>;
+        rr:objectMap [ rr:column "currency" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <book#isbn>;
+        rr:objectMap [ rr:column "isbn" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <book#author>;
+        rr:objectMap [ rr:column "author" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <book#ref-publisher>;
+        rr:objectMap [ 
+            rr:parentTriplesMap <#PublTriplesMap>;
+            rr:joinCondition [
+                rr:child "publisher";
+                rr:parent "name";
+            ];
+        ];
+    ].
+
+# Table publ
+<#PublTriplesMap>
+    rr:logicalTable [ rr:tableName "publ" ];
+    rr:subjectMap [
+        rr:template "publ/name-{name}";
+        rr:class <publ>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <publ#name>;
+        rr:objectMap [ rr:column "name" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <publ#address>;
+        rr:objectMap [ rr:column "address" ];
+    ].
+
+# Table music
+<#MusicTriplesMap>
+    rr:logicalTable [ rr:tableName "music" ];
+    rr:subjectMap [
+        rr:template "music/title-{title}";
+        rr:class <music>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <music#title>;
+        rr:objectMap [ rr:column "title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <music#price>;
+        rr:objectMap [ 
+            rr:column "price";
+            rr:datatype xsd:decimal
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <music#currency>;
+        rr:objectMap [ rr:column "currency" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <music#ref-rec>;
+        rr:objectMap [ 
+            rr:parentTriplesMap <#RecorderTriplesMap>;
+            rr:joinCondition [
+                rr:child "rec";
+                rr:parent "recname";
+            ];
+        ];
+    ].
+
+# Table recorder
+<#RecorderTriplesMap>
+    rr:logicalTable [ rr:tableName "recorder" ];
+    rr:subjectMap [
+        rr:template "recorder/recname-{recname}";
+        rr:class <publ>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <recorder#recname>;
+        rr:objectMap [ rr:column "recname" ];
+    ].
+
+# Table pc_hw
+<#Pc_hwTriplesMap>
+    rr:logicalTable [ rr:tableName "pc_hw" ];
+    rr:subjectMap [
+        rr:template "pc_hw/title-{title}";
+        rr:class <pc_hw>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <pc_hw#title>;
+        rr:objectMap [ rr:column "title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <pc_hw#price>;
+        rr:objectMap [ 
+            rr:column "price";
+            rr:datatype xsd:decimal
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <pc_hw#currency>;
+        rr:objectMap [ rr:column "currency" ];
+    ].
+
+# Table video
+<#VideoTriplesMap>
+    rr:logicalTable [ rr:tableName "video" ];
+    rr:subjectMap [
+        rr:template "video/title-{title}";
+        rr:class <video>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <video#title>;
+        rr:objectMap [ rr:column "title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <video#price>;
+        rr:objectMap [ 
+            rr:column "price";
+            rr:datatype xsd:decimal
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <video#currency>;
+        rr:objectMap [ rr:column "currency" ];
+    ].
