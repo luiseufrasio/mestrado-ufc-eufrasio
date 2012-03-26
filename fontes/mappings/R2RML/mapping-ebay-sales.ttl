@@ -22,7 +22,7 @@
         rr:predicate s:pub;
         rr:objectMap [ 
             rr:parentTriplesMap <#PublisherTriplesMap>;
-                rr:joinCondition [
+            rr:joinCondition [
                 rr:child "publisher";
                 rr:parent "publisher";
             ];
