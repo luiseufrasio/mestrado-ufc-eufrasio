@@ -1,0 +1,104 @@
+@base <http://www.ebay.com/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Table offer
+<#OfferTriplesMap>
+    rr:logicalTable [ rr:tableName "offer" ];
+    rr:subjectMap [
+        rr:template "offer/id-{id}";
+        rr:class <offer>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <offer#id>;
+        rr:objectMap [ 
+            rr:column "id";
+            rr:datatype xsd:int
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <offer#qty>;
+        rr:objectMap [
+            rr:column "qty";
+            rr:datatype xsd:int
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <offer#price>;
+        rr:objectMap [ 
+            rr:column "price";
+            rr:datatype xsd:decimal
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <offer#currency>;
+        rr:objectMap [ rr:column "currency" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <offer#ref-product>;
+        rr:objectMap [ 
+            rr:parentTriplesMap <#ProductTriplesMap>;
+            rr:joinCondition [
+                rr:child "product";
+                rr:parent "title";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <offer#ref-seller>;
+        rr:objectMap [ 
+            rr:parentTriplesMap <#SellerTriplesMap>;
+            rr:joinCondition [
+                rr:child "seller";
+                rr:parent "name";
+            ];
+        ];
+    ].
+
+# Table product
+<#ProductTriplesMap>
+    rr:logicalTable [ rr:tableName "product" ];
+    rr:subjectMap [
+        rr:template "product/title-{title}";
+        rr:class <product>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <product#type>;
+        rr:objectMap [ rr:column "type" ];
+    ];    
+    rr:predicateObjectMap [
+        rr:predicate <product#title>;
+        rr:objectMap [ rr:column "title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <product#condit>;
+        rr:objectMap [ rr:column "condit" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <product#author>;
+        rr:objectMap [ rr:column "author" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <product#year>;
+        rr:objectMap [ 
+            rr:column "year";
+            rr:datatype xsd:int
+        ];
+    ];    
+    rr:predicateObjectMap [
+        rr:predicate <product#publisher>;
+        rr:objectMap [ rr:column "publisher" ];
+    ].
+    
+# Table seller
+<#SellerTriplesMap>
+    rr:logicalTable [ rr:tableName "seller" ];
+    rr:subjectMap [
+        rr:template "seller/name-{name}";
+        rr:class <seller>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate <seller#name>;
+        rr:objectMap [ rr:column "name" ];
+    ].
