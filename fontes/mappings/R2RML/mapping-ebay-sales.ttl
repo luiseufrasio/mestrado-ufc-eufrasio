@@ -1,10 +1,10 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix s: <http://semanticweb.org/images/7/7e/Sales.owl#> .
+@prefix s: <http://example.org/Sales.owl#> .
 
 # Table product (type='book')
-<#TriplesMap1>
+<#BookTriplesMap>
     rr:logicalTable [ rr:sqlQuery """
         SELECT *
         FROM product p
@@ -21,7 +21,7 @@
     rr:predicateObjectMap [
         rr:predicate s:pub;
         rr:objectMap [ 
-            rr:parentTriplesMap <#TriplesMap2>;
+            rr:parentTriplesMap <#PublisherTriplesMap>;
                 rr:joinCondition [
                 rr:child "publisher";
                 rr:parent "publisher";
@@ -30,8 +30,12 @@
     ].
 
 # Table publisher
-<#TriplesMap2>
-    rr:logicalTable [ rr:tableName "product" ];
+<#PublisherTriplesMap>
+    rr:logicalTable [ rr:sqlQuery """
+        SELECT distinct publisher
+        FROM product p
+        WHERE p.type='book'
+        """];
     rr:subjectMap [
         rr:template "publisher/{publisher}";
         rr:class s:Publ;
@@ -42,7 +46,7 @@
     ].
 
 # Table music
-<#TriplesMap3>
+<#MusicTriplesMap>
     rr:logicalTable [ rr:sqlQuery """
         SELECT *
         FROM product p
