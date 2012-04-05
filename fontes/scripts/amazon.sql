@@ -50,6 +50,9 @@ INSERT INTO Publ
     
 INSERT INTO Book
     VALUES ('VERDADES FUNDAMENTAIS SOBRE A NATUREZA DO LIDER', 59.9, 'REAL', '978-85-352-4150-1', 'Barry Posner', 'CAMPUS');
+    
+INSERT INTO Book
+    VALUES ('Biblia Sagrada Edicao Pastoral', 40.0, 'REAL', '978-85-352-4150-1', 'God', 'CAMPUS');
 
 INSERT INTO Recorder
     VALUES ('Universal Music Argentina S.A.');
