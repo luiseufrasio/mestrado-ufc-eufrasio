@@ -6,7 +6,7 @@
 # Table product (type='book')
 <#BookTriplesMap>
     rr:logicalTable [ rr:sqlQuery """
-        SELECT *
+        SELECT title, publisher
         FROM product p
         WHERE p.type='book'
         """];

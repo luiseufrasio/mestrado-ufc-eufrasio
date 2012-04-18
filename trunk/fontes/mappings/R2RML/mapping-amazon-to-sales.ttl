@@ -42,7 +42,7 @@
 # Table music
 <#MusicTriplesMap>
     rr:logicalTable [ rr:sqlQuery """
-        SELECT m.*, r.recname
+        SELECT m.title, r.recname
         FROM music m, recorder r
         WHERE m.rec = r.recname
         """];
