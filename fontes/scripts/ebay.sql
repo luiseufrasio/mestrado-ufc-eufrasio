@@ -27,6 +27,21 @@ CREATE TABLE Offer (
     primary key(id)
 );
 
+CREATE VIEW S_Book AS
+SELECT title as s_title, publisher as s_pub
+FROM Product
+WHERE type='book';
+
+CREATE VIEW S_Publ AS
+SELECT DISTINCT publisher as s_name
+FROM Product
+WHERE type='book';
+
+CREATE VIEW S_Music AS
+SELECT title as s_title
+FROM Product
+WHERE type='music';
+
 INSERT INTO Seller
     VALUES ('Chico Buarque de Holanda');
     

@@ -1,0 +1,70 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:Configuration a d2rq:Configuration;
+    d2rq:serveVocabulary false.
+
+map:database a d2rq:Database;
+    d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+    d2rq:jdbcURL "jdbc:mysql://127.0.0.1/ebay";
+    d2rq:username "root";
+    d2rq:password "admin";
+    jdbc:autoReconnect "true";
+    jdbc:zeroDateTimeBehavior "convertToNull";
+    .
+
+# Table s_book
+map:s_book a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    # Sorry, I don't know which columns to put into the uriPattern
+    #     for "s_book" because the table doesn't have a primary key.
+    #     Please specify it manually.
+    d2rq:uriPattern "s_book";
+    d2rq:class <s_book>;
+    .
+map:s_book_s_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:s_book;
+    d2rq:property <s_book#s_title>;
+    d2rq:column "s_book.s_title";
+    .
+map:s_book_s_pub a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:s_book;
+    d2rq:property <s_book#s_pub>;
+    d2rq:column "s_book.s_pub";
+    .
+
+# Table s_music
+map:s_music a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    # Sorry, I don't know which columns to put into the uriPattern
+    #     for "s_music" because the table doesn't have a primary key.
+    #     Please specify it manually.
+    d2rq:uriPattern "s_music";
+    d2rq:class <s_music>;
+    .
+map:s_music_s_title a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:s_music;
+    d2rq:property <s_music#s_title>;
+    d2rq:column "s_music.s_title";
+    .
+
+# Table s_publ
+map:s_publ a d2rq:ClassMap;
+    d2rq:dataStorage map:database;
+    # Sorry, I don't know which columns to put into the uriPattern
+    #     for "s_publ" because the table doesn't have a primary key.
+    #     Please specify it manually.
+    d2rq:uriPattern "s_publ";
+    d2rq:class <s_publ>;
+    .
+map:s_publ_s_name a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:s_publ;
+    d2rq:property <s_publ#s_name>;
+    d2rq:column "s_publ.s_name";
+    .
