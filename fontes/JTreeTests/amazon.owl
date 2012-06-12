@@ -1,0 +1,235 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix :        <vocab/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:pc_hardware_id
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :pc_hardware ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "pc_hardware_id" ;
+      rdfs:range xsd:integer .
+
+:dvd_id
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :dvd ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "dvd_id" ;
+      rdfs:range xsd:integer .
+
+:musica_descricao
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :musica ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica_descricao" ;
+      rdfs:range xsd:string .
+
+:musica_valor
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :musica ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica_valor" ;
+      rdfs:range xsd:decimal .
+
+:musica_lancamento
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :musica ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica_lancamento" ;
+      rdfs:range xsd:date .
+
+:musica_artista
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :musica ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica_artista" ;
+      rdfs:range xsd:string .
+
+:estudio_gravadora
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :estudio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "estudio_gravadora" ;
+      rdfs:range xsd:string .
+
+:livro_edicao
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_edicao" ;
+      rdfs:range xsd:integer .
+
+:pc_hardware_tamanhoHD
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :pc_hardware ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "pc_hardware_tamanhoHD" ;
+      rdfs:range xsd:decimal .
+
+:pc_hardware
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "pc_hardware" .
+
+:musica_idEstudio
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :musica ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica_idEstudio" ;
+      rdfs:range :estudio .
+
+:pc_hardware_valor
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :pc_hardware ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "pc_hardware_valor" ;
+      rdfs:range xsd:decimal .
+
+:dvd_descricao
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :dvd ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "dvd_descricao" ;
+      rdfs:range xsd:string .
+
+:livro_valor
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_valor" ;
+      rdfs:range xsd:decimal .
+
+:diretor_id
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :diretor ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "diretor_id" ;
+      rdfs:range xsd:integer .
+
+:musica_id
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :musica ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica_id" ;
+      rdfs:range xsd:integer .
+
+:estudio
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "estudio" .
+
+:estudio_id
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :estudio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "estudio_id" ;
+      rdfs:range xsd:integer .
+
+:musica
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "musica" .
+
+:livro_id
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_id" ;
+      rdfs:range xsd:integer .
+
+:livro_enderecoEditora
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_enderecoEditora" ;
+      rdfs:range xsd:string .
+
+:estudio_nome
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :estudio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "estudio_nome" ;
+      rdfs:range xsd:string .
+
+:     a       owl:Ontology ;
+      dc:creator "D2RQ Mapping Generator" ;
+      owl:imports dc: .
+
+:pc_hardware_tipoCPU
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :pc_hardware ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "pc_hardware_tipoCPU" ;
+      rdfs:range xsd:string .
+
+:livro_descricao
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_descricao" ;
+      rdfs:range xsd:string .
+
+:dvd_idDiretor
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :dvd ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "dvd_idDiretor" ;
+      rdfs:range :diretor .
+
+:diretor_nome
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :diretor ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "diretor_nome" ;
+      rdfs:range xsd:string .
+
+:diretor
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "diretor" .
+
+:dvd_valor
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :dvd ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "dvd_valor" ;
+      rdfs:range xsd:decimal .
+
+:livro_editora
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_editora" ;
+      rdfs:range xsd:string .
+
+:pc_hardware_descricao
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :pc_hardware ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "pc_hardware_descricao" ;
+      rdfs:range xsd:string .
+
+:dvd  a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "dvd" .
+
+:livro
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro" .
+
+:livro_autor
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :livro ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "livro_autor" ;
+      rdfs:range xsd:string .
+
+:dvd_categoria
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain :dvd ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "dvd_categoria" ;
+      rdfs:range xsd:string .
