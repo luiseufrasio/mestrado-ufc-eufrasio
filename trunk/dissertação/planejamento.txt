@@ -1,0 +1,40 @@
+Janeiro 2013
+
+dias 2 - 6
+
+3. Estudo de Caso
+        - Banco Relacional Fonte
+        - Ontologia Alvo
+        - Assertivas
+
+dias 7 - 13
+4. Tradução das Assertivas para R2RML
+
+
+dias 14 - 20
+5. Estratégia para geração dos mapeamentos R2RML
+        5.1 Processo em 3 passos:
+                1 Criação das Assertivas
+                2 Geração da Ontologia Exportada
+                3 Geração das Visões e do Mapeamento R2RML
+        5.2 Aplicação no Estudo de Caso
+
+dias 21 - 25
+Resumo
+
+1. Introdução
+
+2. Fundamentação Teórica
+        - RDB2RDF
+        - Linked Data
+        - R2RML
+        - Assertivas de Correspondência
+                -> notação
+                -> regras de transformação
+        - Trabalhos Relacionados
+        - Conclusão
+
+6. Conclusão
+
+dias 28 - 30
+Apresentação
