@@ -1,0 +1,50 @@
+Resumo
+
+1. Introdução
+-> Deixe para fazer isso por último...
+-> Explicar o problema aqui
+	- Contextualização do Problema
+	- Conclusão
+ 
+
+2. Fundamentação Teórica
+        - Linked Data
+        - RDB2RDF 
+        - R2RML
+        - Assertivas de Correspondência
+		- notação
+		- regras de transformação
+	- Conclusão
+ 
+3. Trabalhos Relacionados
+	- D2RQ
+	- Virtuoso
+	- Babel
+	- Conclusão
+
+-> Eu falaria do estudo de caso somente após apresentar o problema e a solução do problema
+-> A não ser que o estudo de caso seja para motivar o problema....
+ 
+4. Tradução das Assertivas para R2RML
+
+5. Estratégia para geração dos mapeamentos R2RML
+        5.1 Processo em 3 passos:
+                1 Criação das Assertivas
+                2 Geração da Ontologia Exportada
+                3 Geração das Visões e do Mapeamento R2RML
+        5.2 Aplicação no Estudo de Caso
+
+
+-> Os capítulos 4 e 5 referem-se à solução do problema. Podem estar em um capítulo só ou em dois. Sem problema. Desde que a sequencia dos capítulos faça sentido. 
+-> Vc pode tomar por base os artigos...
+
+-> A apresentação/discussão do problema a ser solucionado 
+pode ser feita na introdução ou em um capítulo a parte. 
+Contanto que fique bem claro o problema a ser solucionado e sua relevância. 
+ 
+6. Estudo de Caso
+        - Banco Relacional Fonte
+        - Ontologia Alvo
+        - Assertivas
+
+7. Conclusão

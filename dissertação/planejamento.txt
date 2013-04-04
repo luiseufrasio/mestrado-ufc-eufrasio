@@ -26,6 +26,7 @@ Resumo
 
 2. Fundamentação Teórica
         - RDB2RDF
+http://www.w3.org/TR/rdb2rdf-ucr/#intro-whyrdb2rdf
         - Linked Data
         - R2RML
         - Assertivas de Correspondência
@@ -36,5 +37,5 @@ Resumo
 
 6. Conclusão
 
-dias 28 - 30
+dias 28 - 31
 Apresentação
