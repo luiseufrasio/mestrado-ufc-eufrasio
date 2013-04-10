@@ -1,0 +1,12 @@
++ Sempre criar as visões relacionais;
++ Extender as assertivas para definir função URI;
++ Criar o algoritmo a partir da Ontologia Exportada;
+    + criando uma visão para cada classe da ontologia exportada;
+    + geração das visões baseando-se nas assertivas;
+    
+
++ s : pub(b, p) <= a : publisher(b, p); a : Book(b)
+    + publisher é nome da chave estrangeira
+    
++ 
+

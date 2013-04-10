@@ -1,0 +1,1 @@
+[1] Tim Berners-Lee, James Hendler, and Ora Lassila, “The Semantic Web,” in Scientific American 284(5): pp 34-43, 2001. See http://www.scientificamerican.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21&catID=2.

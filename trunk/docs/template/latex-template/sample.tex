@@ -1,0 +1,139 @@
+\documentclass[a4paper]{sbbdshort}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,url}
+%\usepackage{cite} % NOTE: do **not** include this package because it conflicts with jidm.bst
+
+% Standard definitions
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newdef{definition}[theorem]{Definition}
+\newdef{remark}[theorem]{Remark}
+\newenvironment{latexcode}
+{\vspace{0.1in}\setlength{\parindent}{18pt}}
+{\vspace{0.1in}}
+
+\markboth{J.P.M de Oliveira e V.Braganholo}{SBBD template for short papers}   
+%  -> \markboth{}{}
+%         takes 2 arguments
+%         ex: \markboth{Author names}{Any paper title}
+      
+% Title of the paper      
+\title{SBBD template for short papers}         
+
+% List of authors
+%IF THERE ARE TWO or more institutions, please use:
+%\author{Name of Author1\inst{1}, Name of Author2\inst{2}, Name of Author3\inst{2}}
+%IF there is only one institution, please use
+%\author{Name of Author1, Name of Author2, Name of Author3}
+\author{José Palazzo M. de Oliveira\inst{1}, Vanessa Braganholo\inst{2}}
+
+        
+%Affiliation and email        
+\institute{Universidade Federal do Rio Grande do Sul \and
+Universidade Federal Fluminense\\
+\email{palazzo@inf.ufrgs.br, vanessa@ic.uff.br}
+% IF THERE IS ANOTHER INSTITUTION:
+%\and Name_of_the_second_institution \\
+%\email{address@whatever.com}
+}
+
+% Paper abstract              
+\begin{abstract}
+This paper presents the template for SBBD short papers. Authors of SBBD short papers may be invited to submit an extended English version to JIDM. As so, we provide here a template to the short papers that follows the JIDM format. 
+\end{abstract}
+
+\begin{resumo}
+Este artigo apresenta o template para short papers do SBBD. Como so autores de short papers podem ser convidados a submeterem uma versão estendida em inglês para o JIDM, os short papers já devem ser escritos no formato do JIDM.
+\end{resumo}
+
+\category{H.Information Systems}{H.m. Miscellaneous}{Databases}
+\terms{Human Factors, Languages}
+\keywords{SBBD, template}
+\begin{document}
+
+% This is optional
+\begin{bottomstuff}
+This work was conducted during 2011.
+\end{bottomstuff}
+
+\maketitle
+
+\section{Introduction}
+This SBBD template for short papers is based on the JIDM template, by Alberto Laender and Mirella Moro\footnote{http://homepages.dcc.ufmg.br/~mirella/jidm/templates/}.
+
+Short papers will be presented as posters in an interactive setting and should present interesting and exciting recent results or novel thought-provoking ideas that are not quite ready. Short papers submitted to all tracks can be written in Portuguese or English and must not exceed 8 pages. The papers will be published electronically and indexed by BDBComp. 
+ 
+Papers submitted to SBBD must not have been simultaneously submitted to any other forum (conference or journal), nor should they have already been published elsewhere. The acceptance of a paper implies that at least one of its authors will register for the symposium to present it. Submitted papers will be reviewed based on originality, relevance, technical soundness and clarity of presentation.
+Papers exceeding the page limit of the submission type will be automatically rejected without being reviewed by the Program Committee. In addition, all papers must be submitted in PDF format. Formats other than PDF will NOT be accepted. However, exceptionally and upon request, generic postscript might be accepted.
+
+\section{Format}
+
+The first paragraph of every section is not indented. 
+
+The remaining ones are indented.
+
+References to bibliography should be placed in brackets. Here is a reference to a book \cite{Baeza-YatesR99}, a book chapter \cite{BorgidaCL09}, a conference paper \cite{FerreiraGALV09}, a conference paper on a book series (e.g., LNCS) \cite{SilvaLC96}, a journal article \cite{LaenderMNM09}, a PhD thesis  \cite{Moro07} and to information published online \cite{xpath}. In case the URL refers to a software, dataset source or any other information that does not have a proper author, it is better to include it as a footnote, e.g.: "Biblioteca Digital Brasileira de Computação: http://www.lbd.dcc.ufmg.br/bdbcomp".
+
+\section{Figures}
+
+Fig. \ref{fig1} shows an example of Figure. Caption is centralized with font-size is 9,5pt. 
+
+\begin{figure}[h]
+\includegraphics{sbbd}
+\caption{Example of Figure \label{fig1}}
+\end{figure}
+
+\section{Tables}
+
+Captions of tables are similar to the captions of Figures, but are numbered with roman numerals. Table \ref{tab1} shows an example of table. 
+
+\begin{table}[h]
+\caption{Example of Table\label{tab1}}
+\centering{
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Type} & \textbf{Speed-up}\\
+\hline
+A & 10,00\\
+\hline
+B	& 20,00\\
+\hline
+C	&	35,00\\
+\hline
+D	&	21,12\\
+\hline
+E	&	1245,00\\
+\hline
+F	&	45,00\\
+\hline
+G	&	475,00\\
+\hline
+H	&	96,00\\
+\hline
+I	&	52,36\\
+\hline
+J	&	78,96\\
+\hline
+L	&	65,12\\
+\hline
+M	&	45,00\\
+\hline
+N	&	87,30\\
+\hline
+O	&	91,36\\
+\hline
+P	&	74,00\\
+\hline
+Q	&	0,12\\
+\hline
+\end{tabular}}
+\end{table}
+
+
+
+\bibliographystyle{jidm}
+\bibliography{jidmb}
+\end{document}
