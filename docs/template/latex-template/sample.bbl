@@ -1,0 +1,56 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Baeza-Yates and Ribeiro-Neto}{Baeza-Yates and
+  Ribeiro-Neto}{1999}]{Baeza-YatesR99}
+{\sc Baeza-Yates, R.~A.} {\sc and} {\sc Ribeiro-Neto, B.~A.}
+\newblock {\em {Modern Information Retrieval}}.
+\newblock ACM Press / Addison-Wesley, 1999.
+
+\bibitem[\protect\citeauthoryear{Berglund, Boag, Chamberlin, Fern\'{a}ndez,
+  Kay, Robie, and Siméon}{Berglund et~al\mbox{.}}{2007}]{xpath}
+{\sc Berglund, A.}, {\sc Boag, S.}, {\sc Chamberlin, D.}, {\sc Fern\'{a}ndez,
+  M.~F.}, {\sc Kay, M.}, {\sc Robie, J.}, {\sc and} {\sc Siméon, J.}
+\newblock {XML Path Language (XPath) 2.0, W3C Recommendation}.
+\newblock http://www.w3.org/TR/xpath20, 2007.
+
+\bibitem[\protect\citeauthoryear{Borgida, Casanova, and Laender}{Borgida
+  et~al\mbox{.}}{2009}]{BorgidaCL09}
+{\sc Borgida, A.}, {\sc Casanova, M.~A.}, {\sc and} {\sc Laender, A. H.~F.}
+\newblock  {Logical Database Design: from Conceptual to Logical Schema}.
+\newblock In {L.~Ling} {and} {T.~M. \"{O}zsu} (Eds.), {\em {Encyclopedia of
+  Database Systems}}.
+\newblock Springer, Berlin, pp.\  1645--1649, 2009.
+
+\bibitem[\protect\citeauthoryear{da~Silva, Laender, and Casanova}{da~Silva
+  et~al\mbox{.}}{1996}]{SilvaLC96}
+{\sc da~Silva, A.~S.}, {\sc Laender, A. H.~F.}, {\sc and} {\sc Casanova, M.~A.}
+\newblock  {An Approach to Maintaining Optimized Relational Representations of
+  Entity-Relationship Schemas}.
+\newblock In {B.~Thalheim} (Ed.), {\em Conceptual Modeling - ER'96}.
+\newblock Lecture Notes in Computer Science, vol. 1920. Springer, pp.\
+  292--308, 1996.
+
+\bibitem[\protect\citeauthoryear{Ferreira, Gon\c{c}alves, Almeida, Laender, and
+  Veloso}{Ferreira et~al\mbox{.}}{2009}]{FerreiraGALV09}
+{\sc Ferreira, A.~A.}, {\sc Gon\c{c}alves, M.~A.}, {\sc Almeida, J.~M.}, {\sc
+  Laender, A. H.~F.}, {\sc and} {\sc Veloso, A.}
+\newblock {SyGAR - A Synthetic Data Generator for Evaluating Name
+  Disambiguation Methods}.
+\newblock In {\em Proceedings of the European Conference on Research and
+  Advanced Technology for Digital Libraries}. Corfu, Greece, pp.\  437--441,
+  2009.
+
+\bibitem[\protect\citeauthoryear{Laender, Moro, Nascimento, and
+  Martins}{Laender et~al\mbox{.}}{2009}]{LaenderMNM09}
+{\sc Laender, A. H.~F.}, {\sc Moro, M.~M.}, {\sc Nascimento, C.}, {\sc and}
+  {\sc Martins, P.}
+\newblock {An X-ray on Web-available XML Schemas}.
+\newblock {\em SIGMOD Record\/}~38~(1): 37--42, 2009.
+
+\bibitem[\protect\citeauthoryear{Moro}{Moro}{2007}]{Moro07}
+{\sc Moro, M.~M.}
+\newblock {\em {The Role of Structural Aggregation for Query Processing over
+  XML Data}}.
+\newblock Ph.D. thesis, University of California, Riverside (UCR), USA, 2007.
+
+\end{thebibliography}

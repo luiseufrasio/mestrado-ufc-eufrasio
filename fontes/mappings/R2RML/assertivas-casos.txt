@@ -1,0 +1,16 @@
+Caso 1:
+#01 v:Musica(m)                         <- a:Musica(m)
+#02 v:Produto(p)                        <- a:Musica(p)
+
+Caso 3:
+#03 v:interprete(m,n)                   <- a:artista(m,n), a:Musica(m)
+#04 v:dataLancamento(m,l)               <- a:lancamento(m,l), a:Musica(m)
+#05 v:titulo(p,d)                       <- a:descricao(p,d), a:Musica(p)
+#06 v:preco(p,v)                        <- a:valor(p,v), a:Musica(p)
+
+Caso 6:
+#07 v:distribuidaPor(m,fGravadora(g))   <- a:produzidaPor(m,e), a:gravadora(e,g), a:Estudio(e)
+
+Caso 5:
+#08 v:Gravadora(fGravadora(g))          <- a:gravadora(e,g), a:Estudio(e)
+#09 v:nomeGravadora(fGravadora(g),g)    <- a:gravadora(e,g), a:Estudio(e)

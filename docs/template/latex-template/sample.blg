@@ -1,0 +1,14 @@
+This is BibTeX, Version 0.99cThe top-level auxiliary file: C:\Users\vanessa\Documents\Congressos\2011-SBBD\templates\latex-template\sample.aux
+The style file: jidm.bst
+Database file #1: jidmb.bib
+Warning--empty address in Baeza-YatesR99
+ptr=1, stack=
+{\em {Encyclopedia of Database Systems}}
+---the literal stack isn't empty for entry BorgidaCL09
+while executing---line 1821 of file jidm.bst
+ptr=1, stack=
+{\em Conceptual Modeling - ER'96}
+---the literal stack isn't empty for entry SilvaLC96
+while executing---line 1821 of file jidm.bst
+Warning--empty publisher in FerreiraGALV09
+(There were 2 error messages)
