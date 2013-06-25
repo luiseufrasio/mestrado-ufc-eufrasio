@@ -38,7 +38,9 @@ Resumo
                 3 Geração das Visões e do Mapeamento R2RML
         5.2 Aplicação no Estudo de Caso
 
--> Os capítulos 4 e 5 referem-se à solução do problema. Podem estar em um capítulo só ou em dois. Sem problema. Desde que a sequencia dos capítulos faça sentido. 
+-> Os capítulos 4 e 5 referem-se à solução do problema. 
+   Podem estar em um capítulo só ou em dois. Sem problema. 
+   Desde que a sequencia dos capítulos faça sentido. 
 -> Vc pode tomar por base os artigos...
 
 -> A apresentação/discussão do problema a ser solucionado 

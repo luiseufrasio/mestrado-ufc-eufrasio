@@ -1,0 +1,5 @@
+- 
+- assertivas de correspondência
+- regras de transformação
+- processo / estratégia
+- Algoritmo p/ ACs e Views
