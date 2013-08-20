@@ -1,0 +1,86 @@
+@prefix conf: <http://ufc.br/rdb2rdfmb/conf/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#TriplesMapDocument>
+    rr:logicalTable [ rr:tableName "foaf_Document_view" ];
+    rr:subjectMap [
+        rr:template "Document/{ID}/";
+        rr:class foaf:Document;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:template "Document #{ID}"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dc:title;
+        rr:objectMap [ rr:column "dc_title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate conf:conference;
+        rr:objectMap [            
+            rr:parentTriplesMap <#TriplesMapConference>;
+            rr:joinCondition [
+                rr:child "conf_conference";
+                rr:parent "ID";
+            ];
+        ];
+    ].
+
+<#TriplesMapDocument_creator>
+    rr:logicalTable [ rr:tableName "foaf_Document_dc_creator_view" ];
+    rr:subjectMap [
+        rr:template "Document/{ID_foaf_Document}/";
+        rr:class foaf:Document;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:template "Document #{ID_foaf_Document}"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dc:creator;
+        rr:objectMap [            
+            rr:parentTriplesMap <#TriplesMapPerson>;
+            rr:joinCondition [
+                rr:child "ID_Person";
+                rr:parent "ID";
+            ];
+        ];
+    ].
+
+<#TriplesMapPerson>
+    rr:logicalTable [ rr:tableName "foaf_Person_view" ];
+    rr:subjectMap [
+        rr:template "Person/{ID}/";
+        rr:class foaf:Person;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:template "Person #{ID}"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foaf:name;
+        rr:objectMap [            
+            rr:template "{foaf_name} {foaf_name2}"; 
+            rr:termType rr:Literal;
+        ];
+    ].
+
+<#TriplesMapConference>
+    rr:logicalTable [ rr:tableName "conf_Conference_view" ];
+    rr:subjectMap [
+        rr:template "Conference/{ID}/";
+        rr:class conf:Conference;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:template "Conference #{ID}"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dc:date;
+        rr:objectMap [ rr:column "dc_date" ];
+    ].
