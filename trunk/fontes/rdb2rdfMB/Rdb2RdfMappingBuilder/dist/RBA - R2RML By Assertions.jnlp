@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="RBA - R2RML By Assertions.jnlp">
+  <information>
+    <title>RBA - R2RML By Assertions</title>
+    <vendor>Luis</vendor>
+    <description>Sample JavaFX 2.0 application.</description>
+    <icon href="file:/C:/Users/Luis/Documents/NetBeansProjects/rdb2rdfMB/Rdb2RdfMappingBuilder/rba.ico" />
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Rdb2RdfMappingBuilder.jar" size="210432" download="eager" />
+    <jar href="lib/commons-codec-1.6.jar" size="232771" download="eager" />
+    <jar href="lib/commons-io-2.4.jar" size="185140" download="eager" />
+    <jar href="lib/commons-logging-1.1.jar" size="52915" download="eager" />
+    <jar href="lib/d2rq-r2rml.jar" size="455327" download="eager" />
+    <jar href="lib/httpclient-4.1.3.jar" size="352585" download="eager" />
+    <jar href="lib/httpcore-4.1.4.jar" size="181409" download="eager" />
+    <jar href="lib/icu4j-3.4.4.jar" size="3233439" download="eager" />
+    <jar href="lib/jena-arq-2.9.0-incubating.jar" size="2259432" download="eager" />
+    <jar href="lib/jena-core-2.7.0-incubating-tests.jar" size="1502832" download="eager" />
+    <jar href="lib/jena-core-2.7.0-incubating.jar" size="1726188" download="eager" />
+    <jar href="lib/jena-iri-0.9.0-incubating.jar" size="154157" download="eager" />
+    <jar href="lib/jetty-continuation-8.1.1.v20120215.jar" size="21215" download="eager" />
+    <jar href="lib/jetty-http-8.1.1.v20120215.jar" size="93374" download="eager" />
+    <jar href="lib/jetty-io-8.1.1.v20120215.jar" size="101442" download="eager" />
+    <jar href="lib/jetty-security-8.1.1.v20120215.jar" size="86268" download="eager" />
+    <jar href="lib/jetty-server-8.1.1.v20120215.jar" size="329793" download="eager" />
+    <jar href="lib/jetty-servlet-8.1.1.v20120215.jar" size="95458" download="eager" />
+    <jar href="lib/jetty-util-8.1.1.v20120215.jar" size="268118" download="eager" />
+    <jar href="lib/jetty-webapp-8.1.1.v20120215.jar" size="106937" download="eager" />
+    <jar href="lib/jetty-xml-8.1.1.v20120215.jar" size="37931" download="eager" />
+    <jar href="lib/joseki-3.4.4.jar" size="132643" download="eager" />
+    <jar href="lib/junit-4.9.jar" size="248994" download="eager" />
+    <jar href="lib/log4j-1.2.16.jar" size="481534" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.18-bin.jar" size="775587" download="eager" />
+    <jar href="lib/postgresql-9.1-901.jdbc4.jar" size="540641" download="eager" />
+    <jar href="lib/servlet-api-3.0.jar" size="200387" download="eager" />
+    <jar href="lib/slf4j-api-1.6.4.jar" size="25962" download="eager" />
+    <jar href="lib/slf4j-log4j12-1.6.4.jar" size="9748" download="eager" />
+    <jar href="lib/sqlite-jdbc-3.7.15-SNAPSHOT-2.jar" size="3662128" download="eager" />
+    <jar href="lib/velocity-dep-1.5.jar" size="698567" download="eager" />
+    <jar href="lib/xercesImpl.jar" size="1367760" download="eager" />
+    <jar href="lib/xml-apis.jar" size="220536" download="eager" />
+  </resources>
+  <shortcut><desktop/></shortcut>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="RBA - R2RML By Assertions" >
+    <param name="requiredFXVersion" value="2.2+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="rdb2rdfmappingbuilder.Rdb2RdfMappingBuilder"  name="RBA - R2RML By Assertions" />
+  <update check="always"/>
+</jnlp>
