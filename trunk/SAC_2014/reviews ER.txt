@@ -1,0 +1,239 @@
+Dear Luis Teixeira Neto:
+
+We regret to inform you that your paper 133 entitled
+A Semi-Automatic Approach for Generating Customized R2RML Mappings
+has not been accepted for presentation at the ER 2013 Conference to be held in
+Hong Kong, November 11-13, 2013. Given an acceptance rate of regular papers is 18.25%, so inclusion in the conference is very competitive.
+
+
+Although we know this is not the outcome you were hoping for, we trust that you will find the enclosed reviews useful as you continue your research endeavors.
+
+Thank you for your submission, and we hope to see you in Hong Kong to participate in the discussions.
+
+Best regards,
+
+Wilfred Ng, Juan Trujillo, Veda Storey
+
+(PC co-chairs, ER 2013)
+
+
+----------------------- REVIEW 1 ---------------------
+PAPER: 133
+TITLE: A Semi-Automatic Approach for Generating Customized R2RML Mappings
+AUTHORS: Vânia Vidal, Marco Antonio Casanova, Luis Teixeira Neto and José Monteiro
+
+OVERALL EVALUATION: -1 (weak reject)
+REVIEWER'S CONFIDENCE: 3 (medium)
+Technical Quality (including proper citations, e.g., to important historical literature): 2 (weak reject)
+Originality: 4 (weak accept)
+Relevance to ER: 3 (acceptable: conceptual modeling is an important part of the paper)
+Quality of the Writing/Organization: 2 (deficient)
+Appropriate References: 3 (acceptable)
+Candidate for Best Paper/Best Student Paper Award: 1 (not really)
+Appropriate for acceptance as a short paper, e.g., because it is somewhat preliminary: 1 (not really)
+Appropriate for invitation to extend this paper for a special issue of a journal: 1 (not really)
+
+----------- SUMMARIZE THE MAIN CONTRIBUTIONS -----------
+The paper proposes an approach for generating R2RML mappings 
+from RDBs to RDF ontologies, based on a "simpler" language for 
+correspondence assertions (CAs). 
+The language is introduced and an algorithm 
+for translating CAs to R2RML is also presented. 
+The procedure is explained using a realistic example, 
+but an evaluation is missing.
+
+----------- LIST THREE STRENGTHS OF THE PAPER -----------
+S1: Relevant problem, although already frequently addressed 
+(in general, but not for R2RML)
+S2: The presented formalisms and algorithms seem 
+to be technically correct
+S3: The procedure has been implemented in a tool 
+that has been demonstrated at ESWC 2013.
+
+----------- LIST THREE WEAKNESSES OF THE PAPER -----------
+W1: The ratio between motivation/explanation and technical details 
+is unbalanced. It is not clear why we need yet 
+another mapping language and an algorithm to translate 
+this new mapping language into an existing language. 
+A good motivating example is missing.
+
+W2: There is no evaluation, although an implementation of the procedure 
+has been already presented at ESWC 2013.
+W3: The presentation of the examples is too short to improve the 
+readability of the paper. "Here is the input, and there is the output" 
+is not an explanation of the approach and it is not helpful to 
+understand the example.
+
+----------- PROVIDE OTHER COMMENTS TO IMPROVE THE QUALITY OF THE PAPER -----------
+The paper might have a valuable contribution, 
+but the presentation does not really highlight the challenges 
+and key contributions of the paper. The paper does not read like 
+a research paper that addresses a specific research question/problem, 
+it is more like an implementation paper: there is a problem 
+(which is very briefly described) and this is how we solved it. 
+The motivation and reasons behind the approach are not explained at all. 
+This is the main drawback of the paper, but especially in the area 
+of RDB-to-RDF mappings, there have been SOOOO MANY approaches that 
+a good argumentation for another one is really necessary.
+
+I understand that providing additional information 
+about motivation and design decisions might be difficult given the 
+page limit, but I would suggest to leave out some 
+technical details (e.g., do not show all CAs in Table 3 and 7, 
+choose a more compact representation for algorithm 1)
+
+----------- COMMENT ON THE SUITABILITY/UNSUITABILITY OF A SHORT VERSION OF THIS PAPER -----------
+Seeing the level of technical detail, it will be hard to make 
+a reasonable short paper.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 133
+TITLE: A Semi-Automatic Approach for Generating Customized R2RML Mappings
+AUTHORS: Vânia Vidal, Marco Antonio Casanova, Luis Teixeira Neto and José Monteiro
+
+OVERALL EVALUATION: -1 (weak reject)
+REVIEWER'S CONFIDENCE: 5 (expert)
+Technical Quality (including proper citations, e.g., to important historical literature): 2 (weak reject)
+Originality: 2 (weak reject)
+Relevance to ER: 2 (deficient)
+Quality of the Writing/Organization: 2 (deficient)
+Appropriate References: 2 (deficient: (see section below on references))
+Candidate for Best Paper/Best Student Paper Award: 1 (not really)
+Appropriate for acceptance as a short paper, e.g., because it is somewhat preliminary: 1 (not really)
+Appropriate for invitation to extend this paper for a special issue of a journal: 1 (not really)
+
+----------- SUMMARIZE THE MAIN CONTRIBUTIONS -----------
+The paper describes the use of "correspondence assertion" constructs 
+to define mappings between a relational database and a target ontology, 
+which can be automatically translated into the W3C R2RML mapping expressions. 
+The R2RML mappings are used to define customized translation of data 
+in a relational database to RDF graphs with embedded SQL queries.
+
+----------- LIST THREE STRENGTHS OF THE PAPER -----------
+1. The paper correctly describes the need to make it easier 
+for domain experts to define R2RML mappings (but CAs are not the solution).
+2. The paper also correctly identifies the need to transform data stored 
+in relational databases to RDF for the LOD initiative to succeed.
+3. The tool cited in the paper to automatically generate R2RML 
+expression seems to be promising (but the input should not be 
+CA constructs as described in the paper).
+
+----------- LIST THREE WEAKNESSES OF THE PAPER -----------
+1. The paper has several technical errors, 
+including fundamental misunderstanding of 
+what constitutes an ontology, a vocabulary, 
+and their relation to RDF (additional points described in detailed review).
+2. The CA described in the paper are clearly duplicating the expressions 
+and constructs of the W3C R2RML, hence there is clearly no apparent need 
+for another intermediary layer between a relational database and 
+RDF graph in addition to R2RML.
+3. The paper has several notation errors, including re-use of variable 
+identifiers to denote two different things, for example A is 
+listed as attributes of a table R (Section 2.2) as well as CAs 
+in Section 2.3.
+
+----------- PROVIDE OTHER COMMENTS TO IMPROVE THE QUALITY OF THE PAPER -----------
+The paper states that it defines an easier way (Correspondence Assertions, CA) 
+to define mappings between a relational database (RDB) schema and 
+an ontology (to generate RDF), which can be automatically transformed into 
+the W3C R2RML expressions. But, the two fundamental issues are:
+1. CAs are not easier to define as compared to R2RML 
+(there is no comparative user survey or evaluation provided 
+by the paper to prove otherwise) and almost all the CA constructs 
+(in Table 3 and Table 7) duplicate the R2RML constructs.
+2. The CAs have significantly lower expressivity as compared to R2RML, 
+for example R2RML provide expressions for inverse properties 
+and also provide a way to handle blank nodes in RDF.
+
+Hence, the need to redo the work of the RDB2RDF WG with a less expressive 
+and partially redundant mapping construct is not made clear in the paper. 
+For example:
+1. Do CAs allow definition of constructs that cannot be expressed in R2RML?
+2. Can CAs be automatically generated from the RDB schema and business rules, 
+which may have been expressed in a rule formalism (e.g SWRL)?
+
+There are several errors in the paper:
+1. Section 1. RDFS or OWL have classes and properties and not RDF
+
+2. Section 2.2. Why is an ontology class mapped to a selection over 
+the primary key attributes of an RDB table? 
+This will lead to incorrect mapping of tuples to the class properties in 
+subsequent RDF dataset.
+
+3. Section 2.3. What are scalar and tuple variables and how can 
+they be members of an ontology? 
+An ontology (especially OWL) does not have variables.
+
+4. Section 2.3 If P(x,y) corresponds to a property P and x and y 
+to its domain and range then B[X,y] cannot be mapped to P(x,y) 
+since B[x,y] is previously mapped to Class C(x).
+
+5. Section 2.3 What is "value of property P" in context of RDF?
+
+6. The CONF_OWL is clearly an incorrect domain ontology with several 
+ontology engineering errors - where did the class Person get "Conf:address" 
+as a property (there is no corresponding value in the ISWC_REL schema)? 
+The location of class Conference may have overlapping 
+set of instances with class PostalAddress, but they are not connected 
+in the schema?
+
+7. There is no table 9 and reference 15 as cited in the paper.
+
+----------- DESCRIBE OTHER REFERENCES THAT SHOULD BE PROVIDED -----------
+1. RDB2OWL: a practical approach for transforming RDB data into 
+RDF/OWL by Bumans et al.
+2. A comparison of RDB-to-RDF mapping languages by Hert et al.
+
+----------- COMMENT ON THE SUITABILITY/UNSUITABILITY OF A SHORT VERSION OF THIS PAPER -----------
+The paper would need to be significantly modified for acceptance 
+as short paper and address the above listed issues.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 133
+TITLE: A Semi-Automatic Approach for Generating Customized R2RML Mappings
+AUTHORS: Vânia Vidal, Marco Antonio Casanova, Luis Teixeira Neto and José Monteiro
+
+OVERALL EVALUATION: 1 (weak accept)
+REVIEWER'S CONFIDENCE: 4 (high)
+Technical Quality (including proper citations, e.g., to important historical literature): 4 (weak accept)
+Originality: 4 (weak accept)
+Relevance to ER: 3 (acceptable: conceptual modeling is an important part of the paper)
+Quality of the Writing/Organization: 3 (acceptable)
+Appropriate References: 3 (acceptable)
+Candidate for Best Paper/Best Student Paper Award: 1 (not really)
+Appropriate for acceptance as a short paper, e.g., because it is somewhat preliminary: 2 (perhaps)
+Appropriate for invitation to extend this paper for a special issue of a journal: 1 (not really)
+
+----------- SUMMARIZE THE MAIN CONTRIBUTIONS -----------
+In the context of LinkedData, the authors propose a two-step approach 
+to define mappings between datasets. Instead of directly writing the 
+mappings in the standard R2RML language, they propose to first define 
+a set of assertions between the elements to be mapped and use those 
+assertions to automatically generate the R2RML mappings
+
+----------- LIST THREE STRENGTHS OF THE PAPER -----------
+As typically done in all schema-to-schema (or model-to-model) transformation 
+scenarios, the authors propose to go up in the abstraction ladder 
+to help designers define the mappings between the two schemas. 
+The idea is to provide a more concise (assertion-based in this case) language
+from which the actual mappings can be generated.
+
+----------- LIST THREE WEAKNESSES OF THE PAPER -----------
+In this sense the paper does not present a fundamental contribution but 
+a practical one. Even if, in fact, the claim that their approach facilitates 
+the definition of R2RML is not validated 
+(there is no experiment with a group of designers measuring this) 
+I think the example clearly conveys this message.
+
+The main concern with the paper is the lack of any comment on 
+the trade-offs of their approach. Going up in the abstraction level 
+always comes with a price. Typically, the higher-level language 
+(the assertion language in this case) is not able to express all 
+possible correspondances we can find in the real world and/or the 
+generation of the mappings from it is only partial. 
+These aspects are completely ignored in the paper.
+
+----------- PROVIDE OTHER COMMENTS TO IMPROVE THE QUALITY OF THE PAPER -----------
+1
