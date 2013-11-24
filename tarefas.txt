@@ -1,12 +1,17 @@
-+ Sempre criar as visões relacionais;
-+ Extender as assertivas para definir função URI;
-+ Criar o algoritmo a partir da Ontologia Exportada;
-    + criando uma visão para cada classe da ontologia exportada;
-    + geração das visões baseando-se nas assertivas;
-    
++ Revisar Capítulos 1 a 3
 
-+ s : pub(b, p) <= a : publisher(b, p); a : Book(b)
-    + publisher é nome da chave estrangeira
-    
-+ 
++ Criar a introdução e conclusão do Capítulo 4
 
++ Criar a conclusão do Capítulo 5
+
++ Revisar os algoritmos do Capítulo 5 testando a geração das Visões e do mapeamento
+
++ Revisar o Capítulo 6
+
++ Escrever o Capítulo 7
+
++ Gerar o índice
+
++ Gerar a lista de Figuras
+
++ Gerar o Apêndice
