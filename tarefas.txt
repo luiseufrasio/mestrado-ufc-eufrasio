@@ -1,10 +1,7 @@
-+ Revisar Capítulos 1 a 3
-
-+ Criar a introdução e conclusão do Capítulo 4
-
 + Criar a conclusão do Capítulo 5
 
-+ Revisar os algoritmos do Capítulo 5 testando a geração das Visões e do mapeamento
++ Revisar os algoritmos do Capítulo 5 testando a geração das Visões e 
+do mapeamento
 
 + Revisar o Capítulo 6
 
