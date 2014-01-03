@@ -1,0 +1,20 @@
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+The authors propose a method to semi-automatic generate R2RML mappings from
+relational databases to RDF.
+
+The strong points of the paper are a well-founded theory and a very detailed
+approach for generating the mappings.
+
+The weak points are that the paper is hard to read, because sometimes the
+reader can be easily lost in the details. Another weak point is that the
+evaluation is only done with a small example. The reader cannot get a feeling
+how well the approach can generate a suitable mapping. The output of the
+approach may be compared with best-efforts mappings from human experts. Of
+course, further relational databases should be dealt with in a more
+comprehensive evaluation.
+
+However, overall, besides these weak points, the paper is suitable to be
+discussed at ACM SAC.

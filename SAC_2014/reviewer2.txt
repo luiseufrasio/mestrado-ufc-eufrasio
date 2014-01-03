@@ -1,0 +1,13 @@
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+The authors present an approach to  automatically  generate  R2RML mappings,
+based  on  a  set  of correspondence  assertions defined manually.  The global
+understanding of the proposed solution is comprehensible thanks to the good
+quality (structure and written) of the paper.
+However the proposed approach is not positioned, enough, in relation to the
+related work. Also, as the proposed approach is driven by correspondence
+assertions (defined manually), their validations or their correctness are not
+mentioned. Also, the lack of an implementation, as proof of concept, makes
+their proposal less conclusive.

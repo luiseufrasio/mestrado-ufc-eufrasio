@@ -1,0 +1,28 @@
+============================================================================
+                            REVIEWER #6
+============================================================================
+
+Having a language for mapping schemas to rdf triples does not prevent further
+work neither on the mapping problem nor on improving the mapping language
+itself. This work is an effort towards advancing current R2RML language
+through simplifying Mapping Language specification.
+
+The paper comprises of a lot of detail, having a subsection to describe clearly
+paper's contribution help readers to more easily understand the main idea of
+the paper.  The authors need to include in this section, the definition or
+description of "simplifying specification" and how their solution simplifies
+R2RML specification.
+
+Since one of main contribution of this paper is automatic R2RML mappings
+generation. The emphasis should be put on this section. For example, the
+section on R2RML can be dropped, in order to describe in more detail the notion
+of "customized mapping generation" and with a fine-grained example.
+
+Other terminologies need more detailed definitions when used for the first
+time. These include Exported ontology, SQL mapping, etc.
+
+Section 4.3 uses temples from table 9, before listing and describing these
+templates.
+
+Overall the paper contains too much detail, and lucks clear description of the
+main idea and contribution.
