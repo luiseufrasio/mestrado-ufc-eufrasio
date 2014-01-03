@@ -1,0 +1,77 @@
+============================================================================
+                            REVIEWER #5
+============================================================================
+
+The work presents a semi-automatic method to define mappings between relational
+schemas and RDF vocabularies and a related approach to automatically translate
+such mappings to R2RML.
+The goal of the presented approach is to simplify the definition of R2RML
+mappings by first defining mappings through manual specification of
+correspondence assertions and then generate the R2RML encoding using such
+assertions.
+
+After a brief introduction to the R2RML mapping language, with an example of
+its application to a simple mapping scenario, the paper introduces the
+necessary definitions for correspondence assertions and their use as
+transformation rules.
+Then the paper introduces the strategy for mapping the obtained correspondence
+assertions to the final R2RML mapping, using a 2 steps method: first, the
+exported ontology has to be defined, and then a set of view schemas and the
+corresponding R2RML mapping are automatically extracted.
+
+As for the presented approach, I would suggest the acceptance of the paper:
+the problem of how to define mapping given a mapping language as R2RML exists
+indeed and an automatized method as the one here proposed can be useful in
+defining such mappings more intuitively from the point of view of the
+developer.
+Moreover the approach is supported by a tool for the specification of
+assertions and an implementation of the automatic translation is underway.
+I think that this work can introduce interesting discussion to the workshop.
+
+On the other hand, I have to suggest to review the presentation of the work to
+increase clarity and provide more explanations for some parts.
+For example, from your presentation it is not clear if other methods for the
+definition of mappings exist and how do you compare to them: for this reason, I
+suggest to add a section for related works, in order to better evaluate the
+contributions of your work.
+
+Moreover, it should be better motivated the reason why you assert
+it is easier to define mappings by correspondence assertions
+rather than directly define R2RML mappings.
+
+One minor note: can your method define mappings only to expose RDB as RDF data
+or they can also be used (in the other direction) to define a correspondence
+for ontology based data access?
+
+I account in the following some suggestions and notes that I recommend to
+consider in the final version of the paper.
+
+Section 2
+- Minor note: do the input RDB schemas need to respect some properties for the
+applicability of the method or it can be applied without drawbacks to schemas
+in any form? (i.e. it is better if you introduce here the notions that you seem
+to require in Section 3)
+
+- While it makes sense to introduce the mapping example here simply to present
+the running example, I also suggest to better highlight the properties of the
+presented schema and the difficulties in the mapping definition that
+your method aim to resolve.
+
+- In Figure 1, please check the Conferences table: is it correct that "date" is
+of type "varchar(50)" while "datum" is of type "datetime"?
+
+Section 3.2:
+- Check numbering in the definitions in this section (shouldn't they be 3.1 to
+3.4?).
+
+Section 3.3:
+- I suggest to better separate the example from the definitions in this
+section.
+Moreover I would be helpful to provide an explanation for the definition of the
+transformation rules you give in Table 6.
+
+Section 4.2:
+- Can you further specify the reason why the exported ontology E should be an
+"open or closed fragment of D"?
+Moreover (also, given that the relative reference is blinded) the definition of
+the notion of open/closed fragment should be further explained and motivated.

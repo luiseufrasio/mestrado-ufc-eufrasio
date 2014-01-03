@@ -1,0 +1,20 @@
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+The paper introduces a semi- automatic R2RML mappings. Data bases to RDF and/
+or RDF to DB are basic subjects in the Web of Data research domain. However the
+too technical presentation of the paper makes the authors’ approach not
+clear. I think that this last had to present the mappings with textual simple
+rules to show how data can be linked with RDF triples. Also, I propose these
+comments to the authors that may help the paper improvement:
+
+1-In the introduction: “the paper has two contributions …” the first
+contribution is already given in references [13], a precedent work, and then
+the only contribution of the paper may be the second one!
+
+2-Point 3.1: in the third paragraph, line 5: we say that tuples of R (not S)
+references tuples of T?
+
+3-What about the evaluation of your proposition? Is this paper an extension
+of [8] or the inverse. I don’t understand?

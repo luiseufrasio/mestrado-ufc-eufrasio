@@ -1,0 +1,357 @@
+Dear Prof. Vânia Maria Ponte Vidal:
+
+On behalf of the SAC 2014 Program Committee, I am delighted
+to inform you that the following submission has been accepted
+to appear at the conference:
+
+     A Semi-Automatic Approach for Generating Customized
+           R2RML Mappings
+
+The Program Committee worked very hard to thoroughly review
+all the submitted papers.
+The acceptance rate for the SWA track is 27.7%.
+Please repay their efforts, by following
+their suggestions when you revise your paper.
+
+To upload your final manuscript, please visit the following
+site:
+
+     https://www.softconf.com/d/sac2014/
+
+and, on the left-hand side of the page, enter the passcode
+associated with your submission.  Your passcode is as follows:
+
+     1270X-J3G4B4G6P3
+
+Alternatively, you can click on the following URL, which will take you
+directly to a form to submit your final paper:
+
+     https://www.softconf.com/d/sac2014/cgi-bin/scmd.cgi?scmd=aLogin&passcode=1270X-J3G4B4G6P3
+
+The reviews and comments are attached below.  Again, try to follow
+their advice when you revise your paper.
+
+Please note that
+(i) the deadline of camera ready papers is on Dec. 6, 2013;
+(ii) at least one author of your paper is **required** to be registered for the conference by Dec. 6, 2013.  Otherwise your paper won't be published;
+(iii) your copyright form should be submitted by Dec. 6, 2013;
+(iv) further instructions on preparing the camera ready papers are available at http://oldwww.acm.org/conferences/sac/sac2014/downloads14.htm
+
+Note: Full papers are limited to 6 pages with the option for up to 2 additional pages at cost (US$80 per page).
+
+Congratulations on your fine work.  If you have any additional
+questions, please feel free to get in touch.
+
+We look forward to seeing you at ACM SAC 2014 in Gyeongju, Korea.
+
+Best Regards,
+SWA Chairs
+SAC 2014, SWA - The Semantic Web and Applications
+
+============================================================================
+SAC 2014 Reviews for Submission #1270
+============================================================================
+
+Title: A Semi-Automatic Approach for Generating Customized R2RML Mappings
+
+Authors: Vânia Maria Pontes Vidal, Marco A. Casanova, Luís Eufrasio T. Neto and José Maria Monteiro
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+
+          Technical Content and Accuracy: 6
+                Significance of the Work: 5
+Appropriate Title, Introduction, and Conclusion: 6
+                    Overall Organization: 3
+                 Appropriateness for SAC: 6
+          Style and Clarity of the Paper: 4
+                  Originality of Content: 5
+                  OVERALL RECOMMENDATION: 5
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+The authors propose a method to semi-automatic generate R2RML mappings from
+relational databases to RDF.
+
+The strong points of the paper are a well-founded theory and a very detailed
+approach for generating the mappings.
+
+The weak points are that the paper is hard to read, because sometimes the
+reader can be easily lost in the details. Another weak point is that the
+evaluation is only done with a small example. The reader cannot get a feeling
+how well the approach can generate a suitable mapping. The output of the
+approach may be compared with best-efforts mappings from human experts. Of
+course, further relational databases should be dealt with in a more
+comprehensive evaluation.
+
+However, overall, besides these weak points, the paper is suitable to be
+discussed at ACM SAC.
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+
+          Technical Content and Accuracy: 6
+                Significance of the Work: 6
+Appropriate Title, Introduction, and Conclusion: 5
+                    Overall Organization: 6
+                 Appropriateness for SAC: 7
+          Style and Clarity of the Paper: 7
+                  Originality of Content: 5
+                  OVERALL RECOMMENDATION: 6
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+Reviewing of the paper : A Semi-Automatic Approach for Generating Customized
+R2RML Mappings
+
+The authors present an approach to  automatically  generate  R2RML mappings,
+based  on  a  set  of correspondence  assertions defined manually.  The global
+understanding of the proposed solution is comprehensible thanks to the good
+quality (structure and written) of the paper.
+However the proposed approach is not positioned, enough, in relation to the
+related work. Also, as the proposed approach is driven by correspondence
+assertions (defined manually), their validations or their correctness are not
+mentioned. Also, the lack of an implementation, as proof of concept, makes
+their proposal less conclusive.
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+
+          Technical Content and Accuracy: 5
+                Significance of the Work: 4
+Appropriate Title, Introduction, and Conclusion: 5
+                    Overall Organization: 3
+                 Appropriateness for SAC: 6
+          Style and Clarity of the Paper: 4
+                  Originality of Content: 4
+                  OVERALL RECOMMENDATION: 5
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+The paper introduces a semi- automatic R2RML mappings. Data bases to RDF and/
+or RDF to DB are basic subjects in the Web of Data research domain. However the
+too technical presentation of the paper makes the authors’ approach not
+clear. I think that this last had to present the mappings with textual simple
+rules to show how data can be linked with RDF triples. Also, I propose these
+comments to the authors that may help the paper improvement:
+
+1-In the introduction: “the paper has two contributions …” the first
+contribution is already given in references [13], a precedent work, and then
+the only contribution of the paper may be the second one!
+
+2-Point 3.1: in the third paragraph, line 5: we say that tuples of R (not S)
+references tuples of T?
+
+3-What         about the evaluation of your proposition? Is this paper an extension
+of [8] or the inverse. I don’t understand?
+
+============================================================================
+                            REVIEWER #4
+============================================================================
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+
+          Technical Content and Accuracy: 4
+                Significance of the Work: 3
+Appropriate Title, Introduction, and Conclusion: 6
+                    Overall Organization: 5
+                 Appropriateness for SAC: 6
+          Style and Clarity of the Paper: 3
+                  Originality of Content: 5
+                  OVERALL RECOMMENDATION: 3
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+The paper presents a comprehensive method for the construction of wrappers [in
+a proper standard representation] that allow the publication of data stored in
+DBMS in the Semantic Web.
+
+The paper is quite appropriate for this track as it tackles  a hot problem for
+this context and the approach seems fairly original.
+However, the techniques appear a bit too "ad hoc" and are only partially
+automatized.
+
+The paper lacks of a discussion of the merits of the proposed strategy from a
+theoretical viewpoint.
+Alternarively an empirical evaluation that proves its effectiveness would be
+required.
+
+The paper organization is OK,
+however examples and the lists of rules are a bit too long to follow.
+
+============================================================================
+                            REVIEWER #5
+============================================================================
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+
+          Technical Content and Accuracy: 5
+                Significance of the Work: 6
+Appropriate Title, Introduction, and Conclusion: 6
+                    Overall Organization: 5
+                 Appropriateness for SAC: 6
+          Style and Clarity of the Paper: 6
+                  Originality of Content: 6
+                  OVERALL RECOMMENDATION: 6
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+The work presents a semi-automatic method to define mappings between relational
+schemas and RDF vocabularies and a related approach to automatically translate
+such mappings to R2RML.
+The goal of the presented approach is to simplify the definition of R2RML
+mappings by first defining mappings through manual specification of
+correspondence assertions and then generate the R2RML encoding using such
+assertions.
+
+After a brief introduction to the R2RML mapping language, with an example of
+its application to a simple mapping scenario, the paper introduces the
+necessary definitions for correspondence assertions and their use as
+transformation rules.
+Then the paper introduces the strategy for mapping the obtained correspondence
+assertions to the final R2RML mapping, using a 2 steps method: first, the
+exported ontology has to be defined, and then a set of view schemas and the
+corresponding R2RML mapping are automatically extracted.
+
+As for the presented approach, I would suggest the acceptance of the paper:
+the problem of how to define mapping given a mapping language as R2RML exists
+indeed and an automatized method as the one here proposed can be useful in
+defining such mappings more intuitively from the point of view of the
+developer.
+Moreover the approach is supported by a tool for the specification of
+assertions and an implementation of the automatic translation is underway.
+I think that this work can introduce interesting discussion to the workshop.
+
+On the other hand, I have to suggest to review the presentation of the work to
+increase clarity and provide more explanations for some parts.
+For example, from your presentation it is not clear if other methods for the
+definition of mappings exist and how do you compare to them: for this reason, I
+suggest to add a section for related works, in order to better evaluate the
+contributions of your work.
+
+Moreover, it should be better motivated the reason why you assert
+it is easier to define mappings by correspondence assertions
+rather than directly define R2RML mappings.
+
+One minor note: can your method define mappings only to expose RDB as RDF data
+or they can also be used (in the other direction) to define a correspondence
+for ontology based data access?
+
+I account in the following some suggestions and notes that I recommend to
+consider in the final version of the paper.
+
+Section 2
+- Minor note: do the input RDB schemas need to respect some properties for the
+applicability of the method or it can be applied without drawbacks to schemas
+in any form? (i.e. it is better if you introduce here the notions that you seem
+to require in Section 3)
+- While it makes sense to introduce the mapping example here simply to present
+the running example, I also suggest to better highlight the properties of the
+presented schema and the difficulties in the mapping definition that
+your method aim to resolve.
+- In Figure 1, please check the Conferences table: is it correct that "date" is
+of type "varchar(50)" while "datum" is of type "datetime"?
+
+Section 3.2:
+- Check numbering in the definitions in this section (shouldn't they be 3.1 to
+3.4?).
+
+Section 3.3:
+- I suggest to better separate the example from the definitions in this
+section.
+Moreover I would be helpful to provide an explanation for the definition of the
+
+transformation rules you give in Table 6.
+
+Section 4.2:
+- Can you further specify the reason why the exported ontology E should be an
+"open or closed fragment of D"?
+Moreover (also, given that the relative reference is blinded) the definition of
+
+the notion of open/closed fragment should be further explained and motivated.
+
+============================================================================
+                            REVIEWER #6
+============================================================================
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+
+          Technical Content and Accuracy: 5
+                Significance of the Work: 5
+Appropriate Title, Introduction, and Conclusion: 6
+                    Overall Organization: 3
+                 Appropriateness for SAC: 6
+          Style and Clarity of the Paper: 3
+                  Originality of Content: 5
+                  OVERALL RECOMMENDATION: 5
+
+
+---------------------------------------------------------------------------
+Comments
+---------------------------------------------------------------------------
+
+Having a language for mapping schemas to rdf triples does not prevent further
+work neither on the mapping problem nor on improving the mapping language
+itself.   This work is an effort towards advancing current R2RML language
+through simplifying Mapping Language specification.
+
+The paper comprises of a lot of detail, having a subsection to describe clearly
+paper's contribution help readers to more easily understand the main idea of
+the paper.  The authors need to include in this section, the definition or
+description of "simplifying specification" and how their solution simplifies
+R2RML specification.
+
+Since one of main contribution of this paper is automatic R2RML mappings
+generation. The emphasis should be put on this section. For example, the
+section on R2RML can be dropped, in order to describe in more detail the notion
+of "customized mapping generation" and with a fine-grained example.
+
+Other terminologies need more detailed definitions when used for the first
+time. These include Exported ontology, SQL mapping, etc.
+
+Section 4.3 uses temples from table 9, before listing and describing these
+templates.
+
+Overall the paper contains too much detail, and lucks clear description of the
+main idea and contribution.

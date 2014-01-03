@@ -1,0 +1,20 @@
+============================================================================
+                            REVIEWER #4
+============================================================================
+
+The paper presents a comprehensive method for the construction of wrappers [in
+a proper standard representation] that allow the publication of data stored in
+DBMS in the Semantic Web.
+
+The paper is quite appropriate for this track as it tackles  a hot problem for
+this context and the approach seems fairly original.
+However, the techniques appear a bit too "ad hoc" and are only partially
+automatized.
+
+The paper lacks of a discussion of the merits of the proposed strategy from a
+theoretical viewpoint.
+Alternarively an empirical evaluation that proves its effectiveness would be
+required.
+
+The paper organization is OK,
+however examples and the lists of rules are a bit too long to follow.
