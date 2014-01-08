@@ -1,0 +1,9 @@
+Inicia percorrendo as classes do vocabulário Ve e declarando K1, ..., Kn como os atributos que compoem a URI de C.
+Passo 1: Cria a variável N e atribue o nome da classe C para ela. N será usada como nome da visão relacional.
+Passo 2: Criar Lista T de tabelas que serão incluídas na cláusula FROM da Visão N, a Lista J de joins que serão 
+incluídos na cláusula WHERE da visão N e a Lista LA dos atributos que serão selecionados com seus respectivos aliases. 
+Na criação da lista LA já são incluídos os atributos chave da visão com seus aliases ID1,...,IDn respectivamente;
+Passo 3: Percorre as propriedades de dados do vocabulário Ve cujo domínio é a Classe atual 
+Caso 3.1: A cardinalidade de P é 1. Considerando que a ACD de P é Fi(P). Para cada tipo de ACD o algoritmo dá um tratamento específico:
+    ?P: P ? R / A
+
